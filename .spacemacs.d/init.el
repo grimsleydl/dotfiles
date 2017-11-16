@@ -578,6 +578,12 @@ Put your configuration code here, except for variables that  should be set befor
 
   ;; (add-to-list 'tramp-default-proxies-alist
   ;;              '("45\\.55\\.213\\.17" "\\`root\\'" "/plink:%h:"))
+  (add-to-list 'tramp-methods
+               '("yadm"
+                 (tramp-login-program "yadm")
+                 (tramp-login-args (("enter")))
+                 (tramp-remote-shell "/bin/sh")
+                 (tramp-remote-shell-args ("-c"))))
 
   (global-hungry-delete-mode)
   ;; (add-hook 'visual-line-mode-hook 'visual-fill-column-mode)
