@@ -184,6 +184,7 @@ This function should only modify configuration layer settings."
                                       ;; (global-set-key (kbd "<your key seq>") 'related-switch-backward)
                                       ;; You might also want to try related-switch-buffer, which prompt you
                                       ;; for the next related buffer to go to (no default key binding here).
+                                      snazzy-theme
                                       terminal-here
                                       tiny
                                       unfill
@@ -273,8 +274,8 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(gruvbox
+                         snazzy
                          darktooth
-                         material
                          material-light
                          spacemacs-dark
                          spacemacs-light

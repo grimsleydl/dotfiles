@@ -6,6 +6,7 @@ export FZF_CTRL_T_OPTS="--exit-0"
 export FZF_ALT_C_OPTS="--exit-0"
 export FZF_ALT_C_COMMAND="fd --type d --no-ignore --hidden --follow --exclude .git"
 
+export PURE_GIT_PULL=0
 
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
