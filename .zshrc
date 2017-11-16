@@ -81,6 +81,7 @@ zplugin ice from"gh-r" as"command"; zplugin load junegunn/fzf-bin
 # automatically narrows down the releases by grepping uname etc.
 zplugin ice from"gh-r" bpick"*linux*" as"command" mv"docker* -> docker-compose"; zplugin load docker/compose
 
+zplugin ice as"command" pick"bin/git-submodule-rewrite"; zplugin load "jeremysears/scripts"
 zplugin ice as"command"; zplugin load "TheLocehiliosan/yadm"
 zplugin ice as"command"; zplugin load "skx/sysadmin-util"
 zplugin ice atclone"./install.py atpull./install.py"; zplugin load "pindexis/marker"
