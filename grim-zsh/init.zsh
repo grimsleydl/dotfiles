@@ -9,8 +9,9 @@ unalias fd
 
 setopt no_hist_verify
 setopt menu_complete
-
+setopt HIST_REDUCE_BLANKS
 unsetopt beep
+
 _fzf_compgen_path() {
     fd --hidden --follow --exclude ".git" . "$1"
 }
@@ -20,23 +21,24 @@ _fzf_compgen_dir() {
     fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
-# adds the arguments from the last commadn to the autocomplete list
-# I wasn't able to get this to work standalone and still print out both regular
-# completion plus the last args, but this works well enough.
-_complete_plus_last_command_args() {
-    last_command=$history[$[HISTCMD-1]]
-    last_command_array=("${(s/ /)last_command}")
-    _sep_parts last_command_array
-    _complete
-}
+# # adds the arguments from the last commadn to the autocomplete list
+# # I wasn't able to get this to work standalone and still print out both regular
+# # completion plus the last args, but this works well enough.
+# _complete_plus_last_command_args() {
+#     last_command=$history[$[HISTCMD-1]]
+#     last_command_array=("${(s/ /)last_command}")
+#     _sep_parts last_command_array
+#     _complete
+# }
 
 
-_force_rehash() {
-    (( CURRENT == 1 )) && rehash
-    return 1  # Because we didn't really complete anything
-}
+# _force_rehash() {
+#     (( CURRENT == 1 )) && rehash
+#     return 1  # Because we didn't really complete anything
+# }
 
-zstyle ':completion:::::' completer _force_rehash _complete_plus_last_command_args _approximate
+# z
+style ':completion:::::' completer _force_rehash _complete_plus_last_command_args _approximate
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 # unset GREP_OPTIONS
 

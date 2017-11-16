@@ -220,6 +220,13 @@ It should only modify the values of Spacemacs settings."
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    ;; (default 5)
    dotspacemacs-elpa-timeout 5
+   ;; If non-nil then Spacelpa repository is the primary source to install
+   ;; a locked version of packages. If nil then Spacemacs will install the lastest
+   ;; version of packages from MELPA. (default nil)
+   dotspacemacs-use-spacelpa nil
+   ;; If non-nil then verify the signature for downloaded Spacelpa archives.
+   ;; (default nil)
+   dotspacemacs-verify-spacelpa-archives nil
    ;; If non-nil then spacemacs will check for updates at startup
    ;; when the current branch is not `develop'. Note that checking for
    ;; new versions works via git commands, thus it calls GitHub services
@@ -578,12 +585,12 @@ Put your configuration code here, except for variables that  should be set befor
 
   ;; (add-to-list 'tramp-default-proxies-alist
   ;;              '("45\\.55\\.213\\.17" "\\`root\\'" "/plink:%h:"))
-  (add-to-list 'tramp-methods
-               '("yadm"
-                 (tramp-login-program "yadm")
-                 (tramp-login-args (("enter")))
-                 (tramp-remote-shell "/bin/sh")
-                 (tramp-remote-shell-args ("-c"))))
+  ;; (add-to-list 'tramp-methods
+  ;;              '("yadm"
+  ;;                (tramp-login-program "yadm")
+  ;;                (tramp-login-args (("enter")))
+  ;;                (tramp-remote-shell "/bin/sh")
+  ;;                (tramp-remote-shell-args ("-c"))))
 
   (global-hungry-delete-mode)
   ;; (add-hook 'visual-line-mode-hook 'visual-fill-column-mode)

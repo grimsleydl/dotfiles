@@ -67,6 +67,7 @@ zplugin light zdharma/zplugin-crasis
 zplugin load "zsh-users/zsh-completions"
 zplugin load "zsh-users/zsh-autosuggestions"
 zplugin load "zsh-users/zsh-history-substring-search"
+zplugin load "zsh-users/zaw"
 # zplugin snippet "PZT::modules/history-substring-search/init.zsh"
 zplugin load "zdharma/history-search-multi-word"
 
@@ -89,6 +90,10 @@ zplugin snippet "/home/$(whoami)/.local/share/marker/marker.sh"
 zplugin ice pick"shell/key-bindings.zsh"; zplugin load "junegunn/fzf"
 zplugin ice pick"shell/completion.zsh"; zplugin load "junegunn/fzf"
 export FZF_COMPLETION_TRIGGER=',,'
+zplugin load "ytet5uy4/fzf-widgets"
+# zplugin load "changyuheng/zsh-interactive-cd"
+zplugin load "mafredri/zsh-async"
+zplugin load "sindresorhus/pure"
 
 for zlocal (~/grim-zsh/**/*.zsh) zplugin snippet -f "$zlocal"
 
@@ -106,3 +111,4 @@ function zplugin_end(){
 
 #if whence -f zplugin; then zplugin_end; else zplug_end; fi
 zplugin_end
+
