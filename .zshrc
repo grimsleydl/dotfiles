@@ -90,7 +90,7 @@ zplugin ice pick"shell/key-bindings.zsh"; zplugin load "junegunn/fzf"
 zplugin ice pick"shell/completion.zsh"; zplugin load "junegunn/fzf"
 export FZF_COMPLETION_TRIGGER=',,'
 
-for zlocal (~/grim-zsh/**/*.zsh); zplugin snippet -f "$zlocal"
+for zlocal (~/grim-zsh/**/*.zsh) zplugin snippet -f "$zlocal"
 
 zplugin load "psprint/zsh-editing-workbench"
 # zplugin load "psprint/zsh-cmd-architect"
