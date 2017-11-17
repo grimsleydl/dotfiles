@@ -50,6 +50,7 @@ zplugin load "supercrabtree/k"
 # zplugin load "psprint/zzcomplete"
 # zplugin load "mollifier/anyframe"
 
+zplugin snippet "OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh"
 zplugin snippet "OMZ::plugins/common-aliases/common-aliases.plugin.zsh"
 zplugin snippet "OMZ::plugins/cp/cp.plugin.zsh"
 zplugin snippet "OMZ::plugins/dotenv/dotenv.plugin.zsh"
@@ -60,6 +61,9 @@ zplugin snippet "OMZ::plugins/sudo/sudo.plugin.zsh"
 # zplugin snippet "OMZ::plugins/globalias/globalias.plugin.zsh"
 zplugin snippet "OMZ::plugins/npm/npm.plugin.zsh"
 zplugin snippet "OMZ::plugins/perms/perms.plugin.zsh"
+zplugin load "mafredri/zsh-async"
+zplugin load "sindresorhus/pure"
+zplugin load "unixorn/warhol.plugin.zsh"
 
 zplugin light zdharma/zui
 zplugin light zdharma/zplugin-crasis
@@ -92,9 +96,9 @@ zplugin ice pick"shell/completion.zsh"; zplugin load "junegunn/fzf"
 export FZF_COMPLETION_TRIGGER=',,'
 zplugin load "ytet5uy4/fzf-widgets"
 # zplugin load "changyuheng/zsh-interactive-cd"
-zplugin load "mafredri/zsh-async"
-zplugin load "sindresorhus/pure"
 
+
+zplugin load "GuilleDF/zsh-ubuntualiases"
 for zlocal (~/grim-zsh/**/*.zsh) zplugin snippet -f "$zlocal"
 
 zplugin load "psprint/zsh-editing-workbench"
