@@ -176,6 +176,8 @@ This function should only modify configuration layer settings."
                                       org-journal
                                       ;; org-page
                                       ;; org-recipes
+                                      transclusion-minor-mode
+                                      org-quick-peek
                                       ;; palimpsest
                                       paper-theme
                                       quickrun
