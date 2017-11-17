@@ -72,6 +72,7 @@ zplugin load "zsh-users/zsh-completions"
 zplugin load "zsh-users/zsh-autosuggestions"
 zplugin load "zsh-users/zsh-history-substring-search"
 zplugin load "zsh-users/zaw"
+zplugin load "ajsalminen/zaw-src-apt"
 # zplugin snippet "PZT::modules/history-substring-search/init.zsh"
 zplugin load "zdharma/history-search-multi-word"
 
@@ -103,8 +104,6 @@ for zlocal (~/grim-zsh/**/*.zsh) zplugin snippet -f "$zlocal"
 
 zplugin load "psprint/zsh-editing-workbench"
 # zplugin load "psprint/zsh-cmd-architect"
-zplugin load "zdharma/fast-syntax-highlighting"
-
 
 function zplugin_end(){
     zplugin cdreplay -q # -q is for quiet
@@ -113,6 +112,7 @@ function zplugin_end(){
     zcompile ${ZDOTDIR:-$HOME}/.zplugin/bin/zplugin.zsh
 }
 
+zplugin load "zdharma/fast-syntax-highlighting"
 #if whence -f zplugin; then zplugin_end; else zplug_end; fi
 zplugin_end
 

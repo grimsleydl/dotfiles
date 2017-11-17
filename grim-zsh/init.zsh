@@ -13,12 +13,12 @@ setopt HIST_REDUCE_BLANKS
 unsetopt beep
 
 _fzf_compgen_path() {
-    fd --hidden --follow --exclude ".git" . "$1"
+    fd --hidden --follow --no-ignore --exclude ".git" . "$1"
 }
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-    fd --type d --hidden --follow --exclude ".git" . "$1"
+    fd --type d --hidden --follow --no-ignore --exclude ".git" . "$1"
 }
 
 # # adds the arguments from the last commadn to the autocomplete list
