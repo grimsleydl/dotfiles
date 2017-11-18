@@ -10,8 +10,17 @@ unalias fd
 setopt no_hist_verify
 setopt menu_complete
 setopt HIST_REDUCE_BLANKS
+setopt append_history
+setopt interactive_comments
+
 unsetopt beep
 
+
+
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
 _fzf_compgen_path() {
     fd --hidden --follow --no-ignore --exclude ".git" . "$1"
 }

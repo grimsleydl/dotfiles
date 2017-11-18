@@ -152,6 +152,7 @@ This function should only modify configuration layer settings."
                                       dired-k
                                       draft-mode
                                       electric-spacing
+                                      evil-briefcase
                                       evil-embrace
                                       evil-goggles
                                       evil-smartparens

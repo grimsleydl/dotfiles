@@ -1,3 +1,4 @@
+alias _='sudo'
 alias xx='patool extract'     #size,show type,human readable
 alias killit='kill -9 %%'
 
