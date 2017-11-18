@@ -11,10 +11,6 @@
 !.ssh/
 .ssh/*
 !.ssh/config
-!.zshrc
-!grim-zsh/
-!.spacemacs.d/config/*
-!.spacemacs.d/layers/*
 
 /node_modules
 /.vagrant
@@ -95,3 +91,9 @@ com_crashlytics_export_strings.xml
 # ctags
 .tags
 tags
+
+# personal whitelist
+!.zshrc
+!grim-zsh/
+!.spacemacs.d/config/*
+!.spacemacs.d/layers/*
