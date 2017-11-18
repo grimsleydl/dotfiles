@@ -13,6 +13,8 @@
 !.ssh/config
 !.zshrc
 !grim-zsh/
+!.spacemacs.d/config/*
+!.spacemacs.d/layers/*
 
 /node_modules
 /.vagrant

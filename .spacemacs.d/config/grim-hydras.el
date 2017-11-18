@@ -12,10 +12,10 @@
 
 (defhydra hydra-org-link-edit (:color red)
   "Org Link Edit"
-  ("j" org-link-edit-forward-slurp "forward slurp")
+  ("l" org-link-edit-forward-slurp "forward slurp")
   ("k" org-link-edit-forward-barf "forward barf")
-  ("u" org-link-edit-backward-slurp "backward slurp")
-  ("i" org-link-edit-backward-barf "backward barf")
+  ("h" org-link-edit-backward-slurp "backward slurp")
+  ("j" org-link-edit-backward-barf "backward barf")
   ("r" jk/unlinkify "remove link")
   ("q" nil "cancel" :color blue))
 
