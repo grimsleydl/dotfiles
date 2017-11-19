@@ -1,6 +1,80 @@
 ;; -*- mode: emacs-lisp -*-
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
+(defvar dotspacemacs/layers/core
+  '(ivy
+    (auto-completion :variables
+                     auto-completion-enable-sort-by-usage t
+                     auto-completion-enable-snippets-in-popup t
+                     auto-completion-enable-help-tooltip t
+                     ;; auto-completion-return-key-behavior nil)
+                     )
+    better-defaults
+    command-log
+    colors
+    evil-cleverparens
+    evil-commentary
+    (evil-snipe :variables
+                evil-snipe-enable-alternate-f-and-t-behaviors t)
+    ;; eyebrowse
+    git
+    github
+    nlinum
+    (org :variables
+         org-want-todo-bindings t)
+    (shell :variables
+           shell-default-height 30
+           shell-default-position 'bottom)
+    syntax-checking
+    themes-megapack
+    ;; version-control
+    vim-empty-lines
+    ))
+(defvar dotspacemacs/layers/extra
+  '(;; dash
+    ;; deft
+    ;; emoji
+    ibuffer
+    imenu-list
+    ;; origami
+    pandoc
+    ;; ranger
+    ;; search-engine
+    ;; speed-reading
+    treemacs
+    ;; unimpaired
+    writeroom
+    ))
+(defvar dotspacemacs/layers/langs
+  '(emacs-lisp
+    autohotkey
+    ;; docker
+    ;; (haskell :variables
+    ;;          haskell-enable-hindent-style "chris-done")
+    ;; (html :variables
+    ;;       scss-compile-at-save nil)
+    javascript
+    ;; (latex :variables
+    ;;        latex-enable-folding t
+    ;;        latex-enable-auto-fill t)
+    markdown
+    ;; nginx
+    shell-scripts
+    elixir
+    (elm :variables
+         elm-sort-imports-on-save t
+         ;; elm-format-command ;; "elm-format-0.18"
+         )
+    ;; fsharp
+    windows-scripts
+    yaml
+    ;; (python)
+    ;; (ipython-notebook)
+    ))
+(defvar dotspacemacs/layers/local
+  '(grim
+    grim-org
+    ))
 
 (defun dotspacemacs/layers ()
   "Layer configuration:
@@ -29,122 +103,10 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layer-path '("~/.spacemacs.d/")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
-   grim--layers
-   '(
-     (emacs-lisp)
-     (ivy)
-     (auto-completion :variables
-                      auto-completion-enable-sort-by-usage t
-                      auto-completion-enable-snippets-in-popup t
-                      auto-completion-enable-help-tooltip t
-                      ;; auto-completion-return-key-behavior nil)
-                      )
-     (autohotkey)
-     (better-defaults)
-     (command-log)
-     (colors)
-     ;; (dash)
-     ;; (docker)
-     ;; deft
-     ;; emoji
-     (evil-cleverparens)
-     (evil-commentary)
-     (evil-snipe :variables
-                 evil-snipe-enable-alternate-f-and-t-behaviors t)
-     ;; eyebrowse
-     (git)
-     (github)
-     ;; (haskell :variables
-     ;;          haskell-enable-hindent-style "chris-done")
-     ;; (html :variables
-     ;;       scss-compile-at-save nil)
-     (ibuffer)
-     (imenu-list)
-     (javascript)
-     ;; (latex :variables
-     ;;        latex-enable-folding t
-     ;;        latex-enable-auto-fill t)
-     (markdown)
-     ;; (nginx)
-     (nlinum)
-     ;; (org :variables
-     ;;      org-enable-reveal-js-support t)
-     (org :variables
-          org-want-todo-bindings t)
-     ;; origami
-     (pandoc)
-     ;; (python)
-     ;; (ipython-notebook)
-     ;; (ranger)
-     ;; (search-engine)
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
-     (shell-scripts)
-     ;; (speed-reading)
-     (syntax-checking)
-     (themes-megapack)
-     ;; unimpaired
-     ;; (version-control)
-     (vim-empty-lines)
-     (windows-scripts)
-     (writeroom)
-     ;; (yaml)
-     (elixir)
-     (elm :variables
-          elm-sort-imports-on-save t
-          ;; elm-format-command ;; "elm-format-0.18"
-          )
-     ;; (fsharp)
-     (treemacs)
-     (yaml)
-     )
-   )
-
-  (setq
-   grim--windows-layers
-   '(
-     (grim :variables
-              grim--windows t
-              grim--osx nil
-              grim--unix nil)
-     )
-   grim--darwin-layers
-   '(
-     osx
-     (grim :variables
-              grim--osx t            ; bound by osx layer
-              grim--windows nil
-              grim--unix nil)
-     ;; (ruby :variables ruby-version-manager 'chruby
-     ;;       ruby-enable-enh-ruby-mode nil)
-     )
-   grim--gnu/linux-layers
-   '(
-     (grim :variables
-              grim--windows t
-              grim--osx nil
-              grim--unix t)
-     ;; (ruby :variables ruby-version-manager 'chruby
-     ;; ruby-enable-enh-ruby-mode nil)
-     )
-   grim--personal-layers
-   '(
-     (grim-org)
-     )
-   )
-  (cond ((eq system-type 'windows-nt)
-         (setq grim--layers (append grim--layers grim--windows-layers)))
-        ((eq system-type 'darwin)
-         (setq grim--layers (append grim--layers grim--darwin-layers)))
-        ((eq system-type 'gnu/linux)
-         (setq grim--layers (append grim--layers grim--gnu/linux-layers))))
-  (setq grim--layers (append grim--layers grim--personal-layers))
-  ;; (when (member system-name grim-work-systems)
-  ;;   (setq grim--layers (append grim-layers grim-work-layers)))
-
-  (setq-default
-   dotspacemacs-configuration-layers grim--layers
+   dotspacemacs-configuration-layers (append dotspacemacs/layers/core
+                                             dotspacemacs/layers/extra
+                                             dotspacemacs/layers/langs
+                                             dotspacemacs/layers/local)
 
    dotspacemacs-additional-packages '(all-the-icons
                                       amx
@@ -167,6 +129,7 @@ This function should only modify configuration layer settings."
                                       ivy-rich
                                       key-chord
                                       kill-or-bury-alive
+                                      lispy
                                       magithub
                                       ;; nlinum
                                       olivetti
@@ -179,7 +142,7 @@ This function should only modify configuration layer settings."
                                       ;; org-page
                                       ;; org-recipes
                                       ;; transclusion-minor-mode
-                                      org-quick-peek
+                                      ;; org-quick-peek
                                       ;; palimpsest
                                       paper-theme
                                       quickrun
@@ -198,6 +161,7 @@ This function should only modify configuration layer settings."
                                       )
 
    dotspacemacs-excluded-packages '(evil-unimpaired)
+   dotspacemacs-frozen-packages '()
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and deletes any unused
@@ -205,7 +169,7 @@ This function should only modify configuration layer settings."
    ;; installs only the used packages but won't delete unused ones. `all'
    ;; installs *all* packages supported by Spacemacs and never uninstalls them.
    ;; (default is `used-only')
-   dotspacemacs-install-packages 'used-only))
+   dotspacemacs-install-packages 'used-but-keep-unused))
 
 (defun dotspacemacs/init ()
   "Initialization:
@@ -565,6 +529,8 @@ This function is called at the very end of Spacemacs startup, after
 layer configuration.
 Put your configuration code here, except for variables that  should be set before packages are loaded."
   (require 'grim-hydras)
+  (setq hydra-look-for-remap t)
+
   (setq-default line-spacing 0)
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
@@ -636,7 +602,7 @@ Put your configuration code here, except for variables that  should be set befor
   (ivy-set-actions
    'counsel-describe-function
    '(("h" ejmr-helpful-try-all "Helpful")))
-   (ivy-set-actions
+  (ivy-set-actions
    'counsel-find-file
    '(("d" delete-file "delete")))
   (ivy-set-display-transformer 'ivy-switch-buffer 'ivy-rich-switch-buffer-transformer)
@@ -707,29 +673,7 @@ Put your configuration code here, except for variables that  should be set befor
     (defadvice haskell-interactive-switch (after spacemacs/haskell-interactive-switch-advice activate)
       (when (eq dotspacemacs-editing-style 'vim)
         (call-interactively 'evil-insert))))
-  ;; (with-eval-after-load 'org
-  ;;   )
   (setq imenu-list-position 'left)
-
-  ;; (shackle-mode t)
-  ;; (setq shackle-rules
-  ;;       '(("*helm-ag*"              :select t   :align right :size 0.5)
-  ;;         ("*helm semantic/imenu*"  :select t   :align right :size 0.4)
-  ;;         ("*helm org inbuffer*"    :select t   :align right :size 0.4)
-  ;;         (flycheck-error-list-mode :select nil :align below :size 0.25)
-  ;;         (ert-results-mode         :select t   :align below :size 0.5)
-  ;;         (calendar-mode            :select t   :align below :size 0.25)
-  ;;         (racer-help-mode          :select t   :align right :size 0.5)
-  ;;         (help-mode                :select t   :align right :size 0.5)
-  ;;         (helpful-mode             :select t   :align right :size 0.5)
-  ;;         (compilation-mode         :select t   :align right :size 0.5)
-  ;;         ("*Org Select*"           :select t   :align below :size 0.33)
-  ;;         ("*Org Note*"             :select t   :align below :size 0.33)
-  ;;         ("*Org Links*"            :select t   :align below :size 0.2)
-  ;;         (" *Org todo*"            :select t   :align below :size 0.2)
-  ;;         ("*Man.*"                 :select t   :align below :size 0.5  :regexp t)
-  ;;         ("*helm.*"                :select t   :align below :size 0.33 :regexp t)
-  ;;         ("*Org Src.*"             :select t   :align below :size 0.5  :regexp t)))
   )
 
 (setq custom-file "~/.spacemacs.d/custom.el")
