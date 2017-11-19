@@ -7,7 +7,6 @@
                      auto-completion-enable-sort-by-usage t
                      auto-completion-enable-snippets-in-popup t
                      auto-completion-enable-help-tooltip t
-                     ;; auto-completion-return-key-behavior nil)
                      )
     better-defaults
     command-log
@@ -16,7 +15,6 @@
     evil-commentary
     (evil-snipe :variables
                 evil-snipe-enable-alternate-f-and-t-behaviors t)
-    ;; eyebrowse
     git
     github
     nlinum
@@ -28,12 +26,12 @@
     syntax-checking
     themes-megapack
     ;; version-control
-    vim-empty-lines
-    ))
+    vim-empty-lines))
 (defvar dotspacemacs/layers/extra
   '(;; dash
     ;; deft
     ;; emoji
+    ;; eyebrowse
     ibuffer
     imenu-list
     ;; origami
@@ -43,8 +41,7 @@
     ;; speed-reading
     treemacs
     ;; unimpaired
-    writeroom
-    ))
+    writeroom))
 (defvar dotspacemacs/layers/langs
   '(emacs-lisp
     autohotkey
@@ -59,6 +56,8 @@
     ;;        latex-enable-auto-fill t)
     markdown
     ;; nginx
+    ;; (python)
+    ;; (ipython-notebook)
     shell-scripts
     elixir
     (elm :variables
@@ -67,14 +66,10 @@
          )
     ;; fsharp
     windows-scripts
-    yaml
-    ;; (python)
-    ;; (ipython-notebook)
-    ))
+    yaml))
 (defvar dotspacemacs/layers/local
   '(grim
-    grim-org
-    ))
+    grim-org))
 
 (defun dotspacemacs/layers ()
   "Layer configuration:
@@ -157,8 +152,7 @@ This function should only modify configuration layer settings."
                                       unfill
                                       ;; vimish-fold
                                       wc-mode
-                                      writegood-mode
-                                      )
+                                      writegood-mode)
 
    dotspacemacs-excluded-packages '(evil-unimpaired)
    dotspacemacs-frozen-packages '()
@@ -241,14 +235,13 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(gruvbox
-                         snazzy
+   dotspacemacs-themes '(snazzy
+                         gruvbox
                          darktooth
                          material-light
                          spacemacs-dark
                          spacemacs-light
-                         leuven
-                         )
+                         leuven)
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
