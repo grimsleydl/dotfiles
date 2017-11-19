@@ -566,6 +566,12 @@ layer configuration.
 Put your configuration code here, except for variables that  should be set before packages are loaded."
   (require 'grim-hydras)
   (setq-default line-spacing 0)
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(fixed-pitch ((t (:family "Fira Code")))))
   ;; (setq python-shell-native-complete nil)
   ;; (setq jedi:server-command
   ;;       `("python"
