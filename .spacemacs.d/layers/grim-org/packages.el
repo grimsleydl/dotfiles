@@ -67,9 +67,15 @@
     :defer t
     :config
     (setq
+     completion-at-point-functions
+     '(org-completion-symbols
+       ora-cap-filesystem
+       org-completion-refs)
      ;; org-adapt-indentation nil
      ;; org-indent-mode t
      org-startup-indented t
+     org-edit-src-content-indentation 0
+     org-cycle-separator-lines 0
      org-cycle-emulate-tab 'white
      org-M-RET-may-split-line nil
      org-insert-heading-respect-content t

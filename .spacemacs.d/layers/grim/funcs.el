@@ -1,3 +1,11 @@
+(defun ora-cap-filesystem ()
+  (let (path)
+    (when (setq path (ffap-string-at-point))
+      (let ((compl (all-completions path #'read-file-name-internal)))
+        (when compl
+          (let ((offset (ivy-completion-common-length (car compl))))
+            (list (- (point) offset) (point) compl)))))))
+
 ;; https://unix.stackexchange.com/questions/19124/bash-multi-line-command-with-comments-after-the-continuation-character
 (defun shell-multiline-comment ()
   (interactive)
@@ -231,43 +239,6 @@ suitable for sorting words across hard line breaks."
           (setq amend (buffer-substring-no-properties pt (point))))))
     (when amend
       (insert (replace-regexp-in-string "  +" " " amend)))))
-
-;; (when grim--windows
-;;   (prefer-coding-system 'utf-8)
-;;   (set-default-coding-systems 'utf-8)
-;;   (setq locale-coding-system 'utf-8)
-;;   (set-terminal-coding-system 'utf-8)
-;;   (set-keyboard-coding-system 'utf-8)
-;;   (set-selection-coding-system 'utf-16-le)
-;;   (if (boundp 'buffer-file-coding-system)
-;;       (setq-default buffer-file-coding-system 'utf-8)
-;;     (setq buffer-file-coding-system 'utf-8))
-;;   ;; (if ((eq system-type 'windows-nt)
-;;   ;; (set-fontset-font "fontset-default" 'unicode "Segoe UI Symbol")))
-;;   ;; (setq-default buffer-file-coding-system 'utf-16-le)))
-;;   (setq current-language-environment "UTF-8")
-;;   (when (display-graphic-p)
-;;     (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
-;;   (set-fontset-font "fontset-default" 'unicode "Segoe UI Symbol")
-;;   )
-
-;; (when grim--unix
-;;   (prefer-coding-system 'utf-8)
-;;   (set-default-coding-systems 'utf-8)
-;;   (setq locale-coding-system 'utf-8)
-;;   (set-terminal-coding-system 'utf-8)
-;;   (set-keyboard-coding-system 'utf-8)
-;;   (set-selection-coding-system 'utf-8)
-;;   (if (boundp 'buffer-file-coding-system)
-;;       (setq-default buffer-file-coding-system 'utf-8)
-;;     (setq buffer-file-coding-system 'utf-8))
-;;   ;; (if ((eq system-type 'windows-nt)
-;;   ;; (set-fontset-font "fontset-default" 'unicode "Segoe UI Symbol")))
-;;   ;; (setq-default buffer-file-coding-system 'utf-16-le)))
-;;   (setq current-language-environment "UTF-8")
-;;   (when (display-graphic-p)
-;;     (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
-;;   )
 
 (defun sk/goto-closest-number ()
   (interactive)

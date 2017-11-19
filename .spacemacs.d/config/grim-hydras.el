@@ -50,7 +50,7 @@
   ("C-m" ivy-done :exit t)
   ("f" ivy-call)
   ("c" ivy-toggle-calling)
-  ("m" ivy-toggle-fuzzy)
+  ("m" ivy-rotate-preferred-builders)
   (">" ivy-minibuffer-grow)
   ("<" ivy-minibuffer-shrink)
   ("w" ivy-prev-action)
@@ -58,7 +58,11 @@
   ("a" ivy-read-action)
   ("t" (setq truncate-lines (not truncate-lines)))
   ("C" ivy-toggle-case-fold)
-  ("o" ivy-occur :exit t))
+  ("o" ivy-occur :exit t)
+  ("D" (ivy-exit-with-action
+        (lambda (_) (find-function 'hydra-ivy/body)))
+       :exit t))
+
 
 (defhydra hydra-help (:exit t)
     ;; Better to exit after any command because otherwise helm gets in a
@@ -365,6 +369,7 @@ T - tag prefix
   ("t" org-time-stamp)
   ("u" org-time-stamp-inactive)
   ("q" nil :color blue))
+
 (defhydra sk/hydra-org-jump (:color pink
                                     :hint nil)
   "
@@ -469,6 +474,7 @@ _h_tml    ^ ^        _A_SCII:
         ("#" server-edit "server edit")
         ("w" spacemacs/window-manipulation-transient-state/body "window")
         ("l" hydra-sp/body "sp")
+        ("D" hydra-ediff/body "diff")
         ("s" save-buffer "save")
         ("o" counsel-mark-ring "mark ring")
         ("k" counsel-yank-pop "kill ring")
@@ -493,4 +499,23 @@ _h_tml    ^ ^        _A_SCII:
  `(defhydra hydra-spawn-global (:color blue :columns 8)
     "Hydra"
     ,@grim/hydra-global-heads))
+
+(defhydra hydra-ediff (:color blue :hint nil)
+  "
+^Buffers           Files           VC                     Ediff regions
+----------------------------------------------------------------------
+_b_uffers           _f_iles (_=_)       _r_evisions              _l_inewise
+_B_uffers (3-way)   _F_iles (3-way)                          _w_ordwise
+                  _c_urrent file
+"
+  ("b" ediff-buffers)
+  ("B" ediff-buffers3)
+  ("=" ediff-files)
+  ("f" ediff-files)
+  ("F" ediff-files3)
+  ("c" ediff-current-file)
+  ("r" ediff-revision)
+  ("l" ediff-regions-linewise)
+  ("w" ediff-regions-wordwise))
+
 (provide 'grim-hydras)
