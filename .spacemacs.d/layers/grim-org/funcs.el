@@ -1,3 +1,12 @@
+(defvar org-blocks-hidden nil)
+(defun org-toggle-blocks ()
+  (interactive)
+  (if org-blocks-hidden
+      (org-show-block-all)
+    (org-hide-block-all))
+  (setq-local org-blocks-hidden (not org-blocks-hidden)))
+
+
 (defun hot-expand (str)
   "Expand org template."
   (insert str)

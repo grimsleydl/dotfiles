@@ -513,9 +513,6 @@ buffer's name.
   (interactive)
   (setq buffer-face-mode-face '(:family "Fira Code"))
   (buffer-face-mode))
-;; Set default font faces for Info and ERC modes
-(add-hook 'erc-mode-hook 'grim/buffer-face-mode-variable)
-(add-hook 'Info-mode-hook 'grim/buffer-face-mode-variable)
 ;; (defun my-adjoin-to-list-or-symbol (element list-or-symbol)
 ;;   (let ((list (if (not (listp list-or-symbol))
 ;;                   (list list-or-symbol)

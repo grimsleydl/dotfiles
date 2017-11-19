@@ -147,12 +147,13 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layers grim--layers
 
    dotspacemacs-additional-packages '(all-the-icons
+                                      amx
                                       ;; fancy-narrow
                                       ;; darkroom
                                       dired-k
                                       draft-mode
                                       electric-spacing
-                                      evil-briefcase
+                                      ;; evil-briefcase
                                       evil-embrace
                                       evil-goggles
                                       evil-smartparens
@@ -177,7 +178,7 @@ This function should only modify configuration layer settings."
                                       org-journal
                                       ;; org-page
                                       ;; org-recipes
-                                      transclusion-minor-mode
+                                      ;; transclusion-minor-mode
                                       org-quick-peek
                                       ;; palimpsest
                                       paper-theme
@@ -621,9 +622,11 @@ Put your configuration code here, except for variables that  should be set befor
   (add-to-list 'auto-mode-alist '("\\.zsh\\'" . sh-mode))
 
   (setq ivy-ignore-buffers (quote ("\\` " "_archive")))
-  (setq ivy-count-format "%d/%d ")
+  (setq ivy-count-format "(%d/%d) ")
+  (setq ivy-format-function 'ivy-format-function-arrow)
   ;; (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
   (setq ivy-initial-inputs-alist nil)
+
   (ivy-set-actions
    'counsel-describe-function
    '(("h" ejmr-helpful-try-all "Helpful")))
@@ -670,6 +673,9 @@ Put your configuration code here, except for variables that  should be set befor
 
   (add-hook 'text-mode-hook
             #'endless/config-prose-completion)
+  ;; Set default font faces for Info and ERC modes
+  (add-hook 'erc-mode-hook 'grim/buffer-face-mode-variable)
+  (add-hook 'Info-mode-hook 'grim/buffer-face-mode-variable)
 
   (add-hook 'org-mode-hook
             '(lambda ()
@@ -678,6 +684,7 @@ Put your configuration code here, except for variables that  should be set befor
                ;; (auto-fill-mode)
                (spacemacs/toggle-visual-line-navigation-on)
                (spacemacs/toggle-auto-fill-mode-on)
+               (org-toggle-blocks)
                (set-buffer-variable-pitch)
                ;; (org-indent-mode)
                (setq fill-column 100)

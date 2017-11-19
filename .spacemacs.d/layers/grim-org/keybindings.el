@@ -8,6 +8,7 @@
   (define-key evil-org-mode-map (kbd "<normal-state> C-n") 'org-show-next-heading-tidily)
   (define-key evil-org-mode-map (kbd "<normal-state> C-p") 'org-show-previous-heading-tidily)
   (define-key org-mode-map [remap fill-paragraph] #'grim/org-fill-or-unfill)
+  (define-key org-mode-map (kbd "C-c t") 'org-toggle-blocks)
 
 ;; (with-eval-after-load 'evil-org
 ;; (evil-define-key 'normal evil-org-mode-map "C-n" 'org-show-next-heading-tidily))
