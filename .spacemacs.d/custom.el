@@ -10,7 +10,7 @@
  '(global-visual-line-mode nil)
  '(gruvbox-contrast (quote high) t)
  '(hl-paren-background-colors (quote ("#2492db" "#95a5a6" nil)))
- '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")) t)
+ '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
  '(org-agenda-files (quote ("~/Dropbox/org/inbox.org" "~/Dropbox/org/me.org")))
  '(package-selected-packages
    (quote
@@ -20,9 +20,3 @@
  '(sml/active-foreground-color "#ecf0f1")
  '(sml/inactive-background-color "#dfe4ea")
  '(sml/inactive-foreground-color "#34495e"))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
