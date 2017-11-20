@@ -29,20 +29,14 @@
 
 ;;; Code:
 (defconst grim-org-packages
-  '(org
-    org-config
+  '((org-config :location local)
     org-trello
     org-wc
     nanowrimo
     ;; ox-twbs
     ;; worf
-    ;; (org-sendto-medium :location local)
     )
   )
-
-
-;; (defun grim-org/init-org-sendto-medium ()
-;;   (spacemacs|use-package-add-hook org :post-config (require 'org-sendto-medium)))
 (defun grim-org/init-org-trello ()
   (use-package org-wc
     :defer t))
@@ -62,7 +56,7 @@
 ;;   (use-package worf
 ;;     :diminish worf-mode
 ;;     ))
-(defun grim/init-org-config
+(defun grim-org/init-org-config ()
     (use-package org-config
       :after org))
 
