@@ -130,7 +130,7 @@ This function should only modify configuration layer settings."
                                       olivetti
                                       org-bookmark-heading
                                       org-brain
-                                      (org-bullets :location (recipe :fetcher github :repo "notetiene/org-bullets"))
+                                      ;; (org-bullets :location (recipe :fetcher github :repo "Kaligule/org-bullets"))
                                       ;; org-dashboard
                                       ;; org-doing
                                       org-journal
