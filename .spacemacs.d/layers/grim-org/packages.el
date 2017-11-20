@@ -30,17 +30,17 @@
 ;;; Code:
 (defconst grim-org-packages
   '((org-config :location local)
-    org-trello
     org-wc
     nanowrimo
+    (org-bullets :location (recipe :fetcher github :repo "Kaligule/org-bullets"))
     ;; ox-twbs
     ;; worf
     )
   )
-(defun grim-org/init-org-trello ()
-  (use-package org-wc
-    :defer t))
 
+(defun grim-org/init-org-bullets ()
+  (use-package org-bullets
+    :defer t))
 (defun grim-org/init-org-wc ()
   (use-package org-wc
     :defer t))
