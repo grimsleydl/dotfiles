@@ -68,8 +68,8 @@
     windows-scripts
     yaml))
 (defvar dotspacemacs/layers/local
-  '(grim
-    grim-org))
+  '((grim :location local)
+    (grim-org :location local)))
 
 (defun dotspacemacs/layers ()
   "Layer configuration:
@@ -642,20 +642,6 @@ Put your configuration code here, except for variables that  should be set befor
   (add-hook 'erc-mode-hook 'grim/buffer-face-mode-variable)
   (add-hook 'Info-mode-hook 'grim/buffer-face-mode-variable)
 
-  (add-hook 'org-mode-hook
-            '(lambda ()
-               ;; make the lines in the buffer wrap around the edges of the screen.
-               ;; (visual-line-mode)
-               ;; (auto-fill-mode)
-               (spacemacs/toggle-visual-line-navigation-on)
-               (spacemacs/toggle-auto-fill-mode-on)
-               (org-toggle-blocks)
-               (set-buffer-variable-pitch)
-               ;; (org-indent-mode)
-               (setq fill-column 100)
-               (spacemacs|diminish buffer-face-mode)
-               )
-            )
   ;; (add-hook 'org-mode-hook 'wc-mode)
   ;; Haskell
   (when (configuration-layer/layer-usedp 'haskell)
