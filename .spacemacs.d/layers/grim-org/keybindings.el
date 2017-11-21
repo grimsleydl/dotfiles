@@ -20,14 +20,16 @@
         (self-insert-command 1)))))
 
 (spacemacs/set-leader-keys-for-major-mode 'org-mode
-  "J" 'org-show-current-heading-tidily
+  "l" 'org-show-current-heading-tidily
+  "J" 'counsel-org-goto
+  "j" 'org-show-next-heading-tidily
+  "k" 'org-show-previous-heading-tidily
   "g" 'narrow-or-widen-dwim
   "oc" 'sk/hydra-org-clock/body
   "of" 'grim-org/reflash-indentation
-  "oj" 'org-show-next-heading-tidily
   "oj" 'sk/hydra-org-jump/body
-  "ok" 'org-show-previous-heading-tidily
   "ol" 'hydra-org-link-edit/body
+  "oL" 'my-org-insert-link
   "oo" 'sk/hydra-org-organize/body
   "op" 'sk/hydra-org-property/body
   "or" 'my/org-refile-and-jump

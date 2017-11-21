@@ -33,7 +33,12 @@
        ;; dired+
        git-auto-commit-mode
        sx
+       zoom
       ))
+(defun grim/init-zoom ()
+  "Initialize zoom"
+  (use-package zoom))
+
 (defun grim/init-sx ()
   "Initialize sx"
   (use-package sx
