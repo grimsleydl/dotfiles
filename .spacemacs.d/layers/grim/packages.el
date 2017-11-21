@@ -23,9 +23,76 @@
 ;;       writegood-mode
 ;;       ;; vimish-fold
 ;;       ;; evil-vimish-fold
+       dired-collapse
+       dired-k
+       dired-narrow
+       dired-quick-sort
+       dired-rainbow
+       dired-subtree
        drag-stuff
+       ;; dired+
        git-auto-commit-mode
+       sx
       ))
+(defun grim/init-sx ()
+  "Initialize sx"
+  (use-package sx
+    :config
+    (;; bind-keys :prefix "C-c s"
+     ;;           :prefix-map my-sx-map
+     ;;           :prefix-docstring "Global keymap for SX."
+     ;;           ("q" . sx-tab-all-questions)
+     ;;           ("i" . sx-inbox)
+     ;;           ("o" . sx-open-link)
+     ;;           ("u" . sx-tab-unanswered-my-tags)
+     ;;           ("a" . sx-ask)
+     ;;           ("s" . sx-search)
+               ))
+    )
+
+(defun grim/init-dired-k ()
+  "Initialize dired-k"
+  (use-package dired-k
+    :after dired
+    :config
+    (setq dired-k-human-readable t)
+    (add-hook 'dired-initial-position-hook 'dired-k)
+    ))
+
+(defun grim/init-dired-collapse ()
+  "Initialize dired-collapse"
+  (use-package dired-collapse
+  :ensure t
+  :after dired
+  :config
+  (add-hook 'dired-after-readin-hook 'dired-collapse-mode)))
+
+(defun grim/init-dired-rainbow ()
+  "Initialize dired-rainbow"
+  (use-package dired-rainbow))
+
+(defun grim/init-dired-narrow ()
+  "Initialize dired-narrow"
+  (use-package dired-narrow))
+
+;; (defun grim/init-dired+ ()
+;;   "Initialize dired+"
+;;   (use-package dired+
+;;     :config
+;;     (setq diredp-hide-details-initially-flag nil)))
+
+(defun grim/init-dired-quick-sort ()
+  "Initialize dired-quick-sort"
+  (use-package dired-quick-sort
+    :init (dired-quick-sort-setup)))
+
+(defun grim/init-dired-subtree ()
+  (use-package dired-subtree
+    :ensure t
+    :after dired
+    :config
+    (bind-key "<tab>" #'dired-subtree-toggle dired-mode-map)
+    (bind-key "<backtab>" #'dired-subtree-cycle dired-mode-map)))
 
 (defun grim/init-git-auto-commit-mode ()
   (use-package git-auto-commit-mode))

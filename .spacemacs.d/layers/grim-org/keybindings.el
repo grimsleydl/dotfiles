@@ -11,11 +11,12 @@
   (define-key org-mode-map (kbd "C-c t") 'org-toggle-blocks)
   ;; (with-eval-after-load 'evil-org
   ;; (evil-define-key 'normal evil-org-mode-map "C-n" 'org-show-next-heading-tidily))
+  (define-key org-mode-map (kbd "C-,") 'org-begin-template)
   (define-key org-mode-map "<"
     (defun org-self-insert-or-less ()
       (interactive)
       (if (looking-back "^")
-          (hydra-org-template/body)
+         (hydra-org-template/body)
         (self-insert-command 1)))))
 
 (spacemacs/set-leader-keys-for-major-mode 'org-mode

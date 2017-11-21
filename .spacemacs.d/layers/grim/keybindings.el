@@ -30,7 +30,8 @@
 
 (spacemacs/set-leader-keys "ba" 'grim/nuke-all-buffers
   "nd" 'narrow-or-widen-dwim
-  "od" 'sk/goto-closest-number
+  "od" 'kill-or-bury-alive
+  "oD" 'sk/goto-closest-number
   "oi" 'sk/mark-inside-subtree
 
   "on" 'grim/narrow-to-region-indirect
@@ -51,6 +52,8 @@
 (define-key evil-visual-state-map "m" 'evil-narrow-indirect)
 
 (define-key dired-mode-map "." 'hydra-dired/body)
+(define-key dired-mode-map (kbd "C-s") 'hydra-dired-quick-sort/body)
+(define-key dired-mode-map (kbd "C-,") 'dired-k)
 ;; (bind-key "C-y" #'hydra-yank-pop/yank)
 ;; (bind-key "M-y" #'hydra-yank-pop/yank-pop)
 ;; (bind-key "s-y" #'hydra-yank-pop/body)
