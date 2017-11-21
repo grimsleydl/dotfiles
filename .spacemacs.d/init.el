@@ -107,7 +107,6 @@ This function should only modify configuration layer settings."
                                       amx
                                       ;; fancy-narrow
                                       ;; darkroom
-                                      dired-k
                                       draft-mode
                                       electric-spacing
                                       ;; evil-briefcase
@@ -523,7 +522,8 @@ layer configuration.
 Put your configuration code here, except for variables that  should be set before packages are loaded."
   (require 'grim-hydras)
   (setq hydra-look-for-remap t)
-
+  (global-hungry-delete-mode)
+  (global-prettify-symbols-mode 1)
   (setq-default line-spacing 0)
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
@@ -562,10 +562,8 @@ Put your configuration code here, except for variables that  should be set befor
   ;;                (tramp-remote-shell "/bin/sh")
   ;;                (tramp-remote-shell-args ("-c"))))
 
-  (global-hungry-delete-mode)
   ;; (add-hook 'visual-line-mode-hook 'visual-fill-column-mode)
   (setq gruvbox-contrast 'hard)
-  (global-prettify-symbols-mode 1)
   (setq w32-get-true-file-attributes nil)
 
   (let ((cmd-exe "/mnt/c/Windows/System32/cmd.exe")
@@ -616,6 +614,7 @@ Put your configuration code here, except for variables that  should be set befor
   (setq show-paren-style 'parenthesis)
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (setq-default evil-escape-key-sequence "jk")
+  ;; fix password escaping if it has the evil-escape-key-sequence in it
   (defun my-read-passwd (read-passwd &rest args)
     "Inhibit evil-escape"
     (let ((evil-escape-inhibit t))

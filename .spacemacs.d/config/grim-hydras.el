@@ -282,6 +282,7 @@ T - tag prefix
   ("g" revert-buffer)        ;; read all directories again (refresh)
   ("i" dired-maybe-insert-subdir)
   ("l" dired-do-redisplay)   ;; relist the marked or singel directory
+  ("k" dired-k)
   ("M" dired-do-chmod)
   ("m" dired-mark)
   ("O" dired-display-file)
