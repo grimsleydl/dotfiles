@@ -103,6 +103,7 @@ zplugin load "ytet5uy4/fzf-widgets"
 
 
 zplugin load "GuilleDF/zsh-ubuntualiases"
+zplugin ice pick"dotfiles/zsh/upr.zsh"; zplugin load "io-monad/dotfiles"
 for zlocal (~/grim-zsh/**/*.zsh) zplugin snippet -f "$zlocal"
 
 zplugin load "psprint/zsh-editing-workbench"
