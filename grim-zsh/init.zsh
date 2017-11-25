@@ -1,6 +1,4 @@
 export PATH="$HOME/.local/bin/:$PATH"
-
-
 export GREP_COLOR='1;33'
 
 # ENHANCD_COMMAND=ecd; export ENHANCD_COMMAND
@@ -47,7 +45,7 @@ _fzf_compgen_dir() {
 # }
 
 # z
-style ':completion:::::' completer _force_rehash _complete_plus_last_command_args _approximate
+# style ':completion:::::' completer _force_rehash _complete_plus_last_command_args _approximate
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 # unset GREP_OPTIONS
 

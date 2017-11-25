@@ -6,7 +6,7 @@ export FZF_CTRL_T_OPTS="--exit-0 --preview '(cat {} || exa -TL2 {}) 2> /dev/null
 # export FZF_ALT_C_OPTS="--exit-0"
 export FZF_ALT_C_OPTS="--exit-0 --preview '(cat {} || exa -TL2 {}) 2> /dev/null | head -20'"
 export FZF_ALT_C_COMMAND="fd --type d --no-ignore --hidden --follow --exclude .git"
-
+export ZSH_AUTOSUGGEST_USE_ASYNC="t"
 export PURE_GIT_PULL=0
 
 export SSH_KEY_PATH="~/.ssh/id_rsa"
