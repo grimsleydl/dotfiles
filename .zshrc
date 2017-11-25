@@ -88,7 +88,13 @@ zplugin ice from"gh-r" as"command"; zplugin load junegunn/fzf-bin
 # One other binary release, it needs renaming from `docker-compose-Linux-x86_64`.
 # Used also `bpick' which selects Linux packages  in this case not needed, Zplugin
 # automatically narrows down the releases by grepping uname etc.
-zplugin ice from"gh-r" bpick"*linux*" as"command" mv"docker* -> docker-compose"; zplugin load docker/compose
+# zplugin ice from"gh-r" bpick"*linux*" as"command" mv"docker* -> docker-compose"; zplugin load docker/compose
+zplugin load "webyneter/docker-aliases"
+zplugin load "asuran/zsh-docker-machine"
+zplugin load "rawkode/zsh-docker-run"
+zplugin ice from"gh-r" bpick"*linux*amd64*" as"command"; zplugin load "tmrts/boilr"
+
+# zplugin ice mv"autocompletion.zsh -> _tldr"; zplugin load "tldr-pages/tldr-node-client"
 
 zplugin ice as"command" pick"bin/git-submodule-rewrite"; zplugin load "jeremysears/scripts"
 zplugin ice as"command"; zplugin load "TheLocehiliosan/yadm"
@@ -100,13 +106,12 @@ zplugin ice pick"shell/completion.zsh"; zplugin load "junegunn/fzf"
 export FZF_COMPLETION_TRIGGER=',,'
 zplugin load "ytet5uy4/fzf-widgets"
 # zplugin load "changyuheng/zsh-interactive-cd"
-
+zplugin load "psprint/zsh-editing-workbench"
 
 zplugin load "GuilleDF/zsh-ubuntualiases"
 zplugin ice pick"dotfiles/zsh/upr.zsh"; zplugin load "io-monad/dotfiles"
 for zlocal (~/grim-zsh/**/*.zsh) zplugin snippet -f "$zlocal"
 
-zplugin load "psprint/zsh-editing-workbench"
 # zplugin load "psprint/zsh-cmd-architect"
 
 function zplugin_end(){

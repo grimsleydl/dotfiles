@@ -104,7 +104,7 @@ This function should only modify configuration layer settings."
                                              dotspacemacs/layers/local)
 
    dotspacemacs-additional-packages '(all-the-icons
-                                      amx
+                                      ;; amx
                                       ;; fancy-narrow
                                       ;; darkroom
                                       draft-mode
@@ -125,6 +125,7 @@ This function should only modify configuration layer settings."
                                       kill-or-bury-alive
                                       lispy
                                       magithub
+                                      moe-theme
                                       ;; nlinum
                                       olivetti
                                       org-bookmark-heading
@@ -140,6 +141,7 @@ This function should only modify configuration layer settings."
                                       ;; palimpsest
                                       paper-theme
                                       quickrun
+                                      ;; rainbow-blocks
                                       ;; related
                                       ;; (global-set-key (kbd "<your key seq>") 'related-switch-forward)
                                       ;; (global-set-key (kbd "<your key seq>") 'related-switch-backward)
@@ -147,6 +149,7 @@ This function should only modify configuration layer settings."
                                       ;; for the next related buffer to go to (no default key binding here).
                                       snazzy-theme
                                       terminal-here
+                                      tldr
                                       tiny
                                       unfill
                                       ;; vimish-fold
@@ -236,9 +239,9 @@ It should only modify the values of Spacemacs settings."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(snazzy
                          gruvbox
-                         darktooth
+                         moe-dark
+                         moe-light
                          material-light
-                         spacemacs-dark
                          spacemacs-light
                          leuven)
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
