@@ -31,7 +31,6 @@ source "$HOME/.zplugin/bin/zplugin.zsh"
 zplugin load "RobSis/zsh-completion-generator"
 autoload -Uz compinit && compinit -i
 zplugin snippet "OMZ::lib/git.zsh"
-# zplugin snippet "OMZ::lib/completion.zsh"
 
 # autoload -Uz _zplugin
 # (( ${+_comps} )) && _comps[zplugin]=_zplugin
@@ -40,10 +39,10 @@ zplugin snippet "OMZ::lib/git.zsh"
 zplugin snippet "PZT::modules/environment/init.zsh"
 zplugin snippet "PZT::modules/history/init.zsh"
 zplugin snippet "PZT::modules/directory/init.zsh"
-zplugin snippet "PZT::modules/completion/init.zsh"
+# zplugin ice svn; zplugin snippet "PZT::modules/utility"
+# zplugin snippet "PZT::modules/completion/init.zsh"
 zplugin snippet "PZT::modules/fasd/init.zsh"
 zplugin snippet "PZT::modules/editor/init.zsh"
-# zplugin ice svn; zplugin snippet "PZT::modules/utility"
 zplugin load "djui/alias-tips"
 export ENHANCD_COMMAND=ecd
 zplugin load "b4b4r07/enhancd"
@@ -53,6 +52,7 @@ zplugin load "supercrabtree/k"
 # zplugin load "psprint/zzcomplete"
 # zplugin load "mollifier/anyframe"
 
+zplugin snippet "OMZ::lib/completion.zsh"
 zplugin snippet "OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh"
 zplugin snippet "OMZ::plugins/common-aliases/common-aliases.plugin.zsh"
 zplugin snippet "OMZ::plugins/cp/cp.plugin.zsh"

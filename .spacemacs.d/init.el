@@ -588,6 +588,9 @@ Put your configuration code here, except for variables that  should be set befor
   (add-to-list 'auto-mode-alist '("\\.zsh\\'" . sh-mode))
 
   (setq ivy-ignore-buffers (quote ("\\` " "_archive")))
+  (add-to-list 'ivy-ignore-buffers "\\*Messages\\*")
+  (add-to-list 'ivy-ignore-buffers "\\*Warnings\\*")
+  (add-to-list 'ivy-ignore-buffers "\\*spacemacs\\*")
   (setq ivy-count-format "(%d/%d) ")
   (setq ivy-format-function 'ivy-format-function-arrow)
   ;; (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
