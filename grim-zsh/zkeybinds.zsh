@@ -1,7 +1,7 @@
 bindkey '^_' undo
 # bindkey '^t' _marker_get
-bindkey ';x' _marker_get
-bindkey ';;' zaw
+bindkey ';x' zaw
+bindkey ';;' _marker_get
 bindkey "^R" history-search-multi-word
 
 zle -N beginning-of-somewhere beginning-or-end-of-somewhere
