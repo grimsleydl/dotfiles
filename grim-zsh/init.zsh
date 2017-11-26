@@ -46,7 +46,9 @@ _fzf_compgen_dir() {
 
 # z
 # style ':completion:::::' completer _force_rehash _complete_plus_last_command_args _approximate
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+# zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 # unset GREP_OPTIONS
 
 

@@ -24,10 +24,11 @@
 ;;       ;; vimish-fold
 ;;       ;; evil-vimish-fold
        dired-collapse
-       dired-k
+       diredfl
+       ;; dired-k
        dired-narrow
        dired-quick-sort
-       dired-rainbow
+       ;; dired-rainbow
        dired-subtree
        drag-stuff
        ;; dired+
@@ -54,6 +55,14 @@
      ;;           ("s" . sx-search)
                ))
     )
+(defun grim/init-diredfl ()
+  "Initialize dired-k"
+  (use-package diredfl
+    :after dired
+    ;; :config
+    ;; (setq dired-k-human-readable t)
+    ;; (add-hook 'dired-initial-position-hook 'dired-k)
+    ))
 
 (defun grim/init-dired-k ()
   "Initialize dired-k"
@@ -67,10 +76,11 @@
 (defun grim/init-dired-collapse ()
   "Initialize dired-collapse"
   (use-package dired-collapse
-  :ensure t
+  ;; :ensure t
   :after dired
   :config
-  (add-hook 'dired-after-readin-hook 'dired-collapse-mode)))
+  (add-hook 'dired-after-readin-hook 'dired-collapse-mode)
+  ))
 
 (defun grim/init-dired-rainbow ()
   "Initialize dired-rainbow"
