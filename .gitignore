@@ -97,3 +97,4 @@ tags
 !grim-zsh/
 !.spacemacs.d/config/*
 !.spacemacs.d/layers/*
+!.tmux.conf
