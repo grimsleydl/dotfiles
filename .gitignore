@@ -98,3 +98,4 @@ tags
 !.spacemacs.d/config/*
 !.spacemacs.d/layers/*
 !.tmux.conf
+!.tmux.conf.local
