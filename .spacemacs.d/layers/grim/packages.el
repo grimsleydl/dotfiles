@@ -58,26 +58,26 @@
 (defun grim/init-diredfl ()
   "Initialize dired-k"
   (use-package diredfl
-    :after dired
+    ;; :after dired
     ;; :config
     ;; (setq dired-k-human-readable t)
     ;; (add-hook 'dired-initial-position-hook 'dired-k)
     ))
 
-(defun grim/init-dired-k ()
-  "Initialize dired-k"
-  (use-package dired-k
-    :after dired
-    :config
-    (setq dired-k-human-readable t)
-    (add-hook 'dired-initial-position-hook 'dired-k)
-    ))
+;; (defun grim/init-dired-k ()
+;;   "Initialize dired-k"
+;;   (use-package dired-k
+;;     :after dired
+;;     :config
+;;     (setq dired-k-human-readable t)
+;;     (add-hook 'dired-initial-position-hook 'dired-k)
+;;     ))
 
 (defun grim/init-dired-collapse ()
   "Initialize dired-collapse"
   (use-package dired-collapse
   ;; :ensure t
-  :after dired
+  ;; :after dired
   :config
   (add-hook 'dired-after-readin-hook 'dired-collapse-mode)
   ))

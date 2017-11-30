@@ -65,7 +65,7 @@ zplugin snippet "OMZ::plugins/sudo/sudo.plugin.zsh"
 zplugin snippet "OMZ::plugins/npm/npm.plugin.zsh"
 zplugin snippet "OMZ::plugins/perms/perms.plugin.zsh"
 zplugin load "mafredri/zsh-async"
-zplugin load "sindresorhus/pure"
+zplugin ice wait'!1'; zplugin load "sindresorhus/pure"
 zplugin load "unixorn/warhol.plugin.zsh"
 
 zplugin light zdharma/zui
@@ -81,7 +81,7 @@ zplugin load "zdharma/history-search-multi-word"
 
 zplugin load "robertzk/send.zsh"
 zplugin load "peterhurford/git-it-on.zsh"
-
+zplugin load "seletskiy/zsh-git-smart-commands"
 # Binary release in archive, from Github-releases page; after automatic unpacking it provides command "fzf"
 zplugin ice from"gh-r" as"command"; zplugin load junegunn/fzf-bin
 
@@ -125,3 +125,4 @@ zplugin load "zdharma/fast-syntax-highlighting"
 #if whence -f zplugin; then zplugin_end; else zplug_end; fi
 zplugin_end
 
+sudo mount -a
