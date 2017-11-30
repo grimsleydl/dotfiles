@@ -121,4 +121,6 @@ export CLICOLOR=1
 export PATH=$PATH:~/.cargo/bin
 export BORG_PASSPHRASE=fadilthrejk
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export DOCKER_HOST=tcp://0.0.0.0:2375.
+sudo mount -a

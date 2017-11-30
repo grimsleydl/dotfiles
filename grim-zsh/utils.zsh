@@ -1,4 +1,8 @@
 # utility functions
+# sudo for user-defined functions only
+# from https://unix.stackexchange.com/a/317737
+sdo() sudo zsh -c "$functions[$1]" "$@"
+
 # this function checks if a command exists and returns either true
 # or false. This avoids using 'which' and 'whence', which will
 # avoid problems with aliases for which on certain weird systems. :-)

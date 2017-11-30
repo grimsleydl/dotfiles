@@ -107,6 +107,7 @@ This function should only modify configuration layer settings."
                                       ;; amx
                                       ;; fancy-narrow
                                       ;; darkroom
+                                      dotenv-mode
                                       draft-mode
                                       electric-spacing
                                       ;; evil-briefcase
