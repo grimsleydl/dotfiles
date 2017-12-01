@@ -106,10 +106,14 @@ zplugin ice as"command"; zplugin light "TheLocehiliosan/yadm"
 zplugin ice as"command"; zplugin light "skx/sysadmin-util"
 zplugin ice atclone"./install.py atpull./install.py"; zplugin light "pindexis/marker"
 zplugin snippet "/home/$(whoami)/.local/share/marker/marker.sh"
+
 zplugin ice pick"shell/key-bindings.zsh"; zplugin light "junegunn/fzf"
 zplugin ice pick"shell/completion.zsh"; zplugin light "junegunn/fzf"
 export FZF_COMPLETION_TRIGGER=',,'
 zplugin load "ytet5uy4/fzf-widgets"
+zplugin load "wfxr/forgit"
+zplugin ice as"command"; zplugin light "DanielFGray/fzf-scripts"
+
 # zplugin load "changyuheng/zsh-interactive-cd"
 zplugin load "psprint/zsh-editing-workbench"
 

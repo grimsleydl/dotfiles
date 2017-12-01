@@ -99,3 +99,4 @@ tags
 !.spacemacs.d/layers/*
 !.tmux.conf
 !.tmux.conf.local
+!.bashrc##*
