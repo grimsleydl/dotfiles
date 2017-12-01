@@ -43,7 +43,7 @@ zplugin snippet "PZT::modules/directory/init.zsh"
 # zplugin snippet "PZT::modules/completion/init.zsh"
 zplugin snippet "PZT::modules/fasd/init.zsh"
 zplugin snippet "PZT::modules/editor/init.zsh"
-zplugin load "djui/alias-tips"
+zplugin light "djui/alias-tips"
 export ENHANCD_COMMAND=ecd
 zplugin load "b4b4r07/enhancd"
 zplugin load "b4b4r07/ssh-keyreg"
@@ -65,44 +65,49 @@ zplugin snippet "OMZ::plugins/sudo/sudo.plugin.zsh"
 zplugin snippet "OMZ::plugins/npm/npm.plugin.zsh"
 zplugin snippet "OMZ::plugins/perms/perms.plugin.zsh"
 zplugin load "mafredri/zsh-async"
-zplugin ice wait'!1'; zplugin load "sindresorhus/pure"
-zplugin load "unixorn/warhol.plugin.zsh"
+# zplugin ice wait'!1'; zplugin load "sindresorhus/pure"
+zplugin load "geometry-zsh/geometry"
+zplugin load "desyncr/geometry-dir-info-prompt"
+zplugin light "unixorn/warhol.plugin.zsh"
 
 zplugin light zdharma/zui
+zplugin ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'
 zplugin light zdharma/zplugin-crasis
 
-zplugin load "zsh-users/zsh-completions"
-zplugin load "zsh-users/zsh-autosuggestions"
-zplugin load "zsh-users/zsh-history-substring-search"
+zplugin light "zsh-users/zsh-completions"
+
+zplugin ice wait'1' atload'_zsh_autosuggest_start'; zplugin load "zsh-users/zsh-autosuggestions"
+zplugin light "zsh-users/zsh-history-substring-search"
 zplugin load "zsh-users/zaw"
 zplugin load "ajsalminen/zaw-src-apt"
 # zplugin snippet "PZT::modules/history-substring-search/init.zsh"
 zplugin load "zdharma/history-search-multi-word"
 
 zplugin load "robertzk/send.zsh"
-zplugin load "peterhurford/git-it-on.zsh"
-zplugin load "seletskiy/zsh-git-smart-commands"
+zplugin light "peterhurford/git-it-on.zsh"
+zplugin light "seletskiy/zsh-git-smart-commands"
 # Binary release in archive, from Github-releases page; after automatic unpacking it provides command "fzf"
-zplugin ice from"gh-r" as"command"; zplugin load junegunn/fzf-bin
+zplugin ice from"gh-r" as"command"; zplugin light junegunn/fzf-bin
 
 # One other binary release, it needs renaming from `docker-compose-Linux-x86_64`.
 # Used also `bpick' which selects Linux packages  in this case not needed, Zplugin
 # automatically narrows down the releases by grepping uname etc.
 # zplugin ice from"gh-r" bpick"*linux*" as"command" mv"docker* -> docker-compose"; zplugin load docker/compose
-zplugin load "webyneter/docker-aliases"
-zplugin load "asuran/zsh-docker-machine"
-zplugin load "rawkode/zsh-docker-run"
-zplugin ice from"gh-r" bpick"*linux*amd64*" as"command"; zplugin load "tmrts/boilr"
+zplugin light "webyneter/docker-aliases"
+zplugin light "asuran/zsh-docker-machine"
+zplugin light "rawkode/zsh-docker-run"
+# zplugin ice from"gh-r" bpick"*linux*amd64*" as"command"; zplugin load "tmrts/boilr"
+zplugin ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh"; zplugin light trapd00r/LS_COLORS
 
 # zplugin ice mv"autocompletion.zsh -> _tldr"; zplugin load "tldr-pages/tldr-node-client"
 
-zplugin ice as"command" pick"bin/git-submodule-rewrite"; zplugin load "jeremysears/scripts"
-zplugin ice as"command"; zplugin load "TheLocehiliosan/yadm"
-zplugin ice as"command"; zplugin load "skx/sysadmin-util"
-zplugin ice atclone"./install.py atpull./install.py"; zplugin load "pindexis/marker"
+zplugin ice as"command" pick"bin/git-submodule-rewrite"; zplugin light "jeremysears/scripts"
+zplugin ice as"command"; zplugin light "TheLocehiliosan/yadm"
+zplugin ice as"command"; zplugin light "skx/sysadmin-util"
+zplugin ice atclone"./install.py atpull./install.py"; zplugin light "pindexis/marker"
 zplugin snippet "/home/$(whoami)/.local/share/marker/marker.sh"
-zplugin ice pick"shell/key-bindings.zsh"; zplugin load "junegunn/fzf"
-zplugin ice pick"shell/completion.zsh"; zplugin load "junegunn/fzf"
+zplugin ice pick"shell/key-bindings.zsh"; zplugin light "junegunn/fzf"
+zplugin ice pick"shell/completion.zsh"; zplugin light "junegunn/fzf"
 export FZF_COMPLETION_TRIGGER=',,'
 zplugin load "ytet5uy4/fzf-widgets"
 # zplugin load "changyuheng/zsh-interactive-cd"
@@ -110,7 +115,12 @@ zplugin load "psprint/zsh-editing-workbench"
 
 zplugin load "GuilleDF/zsh-ubuntualiases"
 zplugin ice pick"dotfiles/zsh/upr.zsh"; zplugin load "io-monad/dotfiles"
-for zlocal (~/grim-zsh/**/*.zsh) zplugin snippet -f "$zlocal"
+zpl ice pick"manydots-magic" wait'3'; zpl load "knu/zsh-manydots-magic"
+
+for zlocal in ~/grim-zsh/**/*.zsh
+do
+    zplugin snippet -f "$zlocal"
+done
 
 # zplugin load "psprint/zsh-cmd-architect"
 
