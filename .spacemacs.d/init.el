@@ -116,7 +116,7 @@ This function should only modify configuration layer settings."
                                       evil-smartparens
                                       fancy-narrow
                                       focus
-                                      fzf
+                                      ;; fzf
                                       helpful
                                       ;; hideshow-orgmode
                                       imenu-anywhere
@@ -596,6 +596,8 @@ Put your configuration code here, except for variables that  should be set befor
   (setq ivy-format-function 'ivy-format-function-arrow)
   ;; (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
   (setq ivy-initial-inputs-alist nil)
+  (setq ivy-use-selectable-prompt t)
+  (setq ivy-dynamic-exhibit-delay-ms 100)
 
   (ivy-set-actions
    'counsel-describe-function
