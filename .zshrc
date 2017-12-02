@@ -146,4 +146,6 @@ zplugin load "zdharma/fast-syntax-highlighting"
 #if whence -f zplugin; then zplugin_end; else zplug_end; fi
 zplugin_end
 
-sudo mount -a
+if [ $(lsb_release -is) = "Ubuntu" ]; then
+   sudo mount -a
+fi
