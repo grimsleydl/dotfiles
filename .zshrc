@@ -93,6 +93,7 @@ zplugin ice from"gh-r" as"command"; zplugin light junegunn/fzf-bin
 # Used also `bpick' which selects Linux packages  in this case not needed, Zplugin
 # automatically narrows down the releases by grepping uname etc.
 # zplugin ice from"gh-r" bpick"*linux*" as"command" mv"docker* -> docker-compose"; zplugin load docker/compose
+
 zplugin light "webyneter/docker-aliases"
 zplugin light "asuran/zsh-docker-machine"
 zplugin light "rawkode/zsh-docker-run"
