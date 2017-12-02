@@ -1,3 +1,8 @@
+export PROMPT_GEOMETRY_COLORIZE_SYMBOL="true"
+export PROMPT_GEOMETRY_COLORIZE_ROOT="true"
+export PROMPT_GEOMETRY_EXEC_TIME="true"
+export GEOMETRY_SYMBOL_RPROMPT="⊢"
+
 export FZF_DEFAULT_OPTS="--reverse --inline-info"
 export FZF_DEFAULT_COMMAND="fd --no-ignore --hidden --follow --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
