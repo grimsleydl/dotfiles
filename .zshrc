@@ -113,6 +113,13 @@ export FZF_COMPLETION_TRIGGER=',,'
 zplugin load "ytet5uy4/fzf-widgets"
 zplugin load "wfxr/forgit"
 zplugin ice as"command"; zplugin light "DanielFGray/fzf-scripts"
+export FZF_MARKER_CONF_DIR=$HOME/.zplugin/plugins/pindexis---marker/tldr
+# export FZF_MARKER_COMMAND_COLOR='\x1b[38;5;255m'
+# export FZF_MARKER_COMMENT_COLOR='\x1b[38;5;8m'
+export FZF_MARKER_MAIN_KEY='\C-@'
+export FZF_MARKER_PLACEHOLDER_KEY='\C-v'
+zplugin load "liangguohuan/fzf-marker"
+zplugin ice as"command" pick"fpp"; zplugin light "facebook/PathPicker"
 
 # zplugin load "changyuheng/zsh-interactive-cd"
 zplugin load "psprint/zsh-editing-workbench"
