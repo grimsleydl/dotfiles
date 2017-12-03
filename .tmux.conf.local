@@ -269,7 +269,10 @@ tmux_conf_copy_to_os_clipboard=false
 set -g default-terminal "screen-256color"
 setw -g aggressive-resize on
 
-# split current window |
-bind h split-window -v
 # split current window -
-bind v split-window -h
+# bind C-h split-window -v
+# split current window |
+bind C-v split-window -h
+
+bind -r C-h previous-window # select previous window
+bind -r C-l next-window     # select next window
