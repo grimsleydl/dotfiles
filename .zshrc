@@ -105,6 +105,7 @@ zplugin ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh"
 zplugin ice as"command" pick"bin/git-submodule-rewrite"; zplugin light "jeremysears/scripts"
 zplugin ice as"command"; zplugin light "TheLocehiliosan/yadm"
 zplugin ice as"command"; zplugin light "skx/sysadmin-util"
+zplugin ice as"command" pick"bin/tat"; zplugin light "thoughtbot/dotfiles"
 zplugin ice atclone"./install.py atpull./install.py"; zplugin light "pindexis/marker"
 zplugin snippet "/home/$(whoami)/.local/share/marker/marker.sh"
 
@@ -149,4 +150,8 @@ zplugin_end
 
 if [ $(lsb_release -is) = "Ubuntu" ]; then
    sudo mount -a
+fi
+
+if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
+    tmux attach-session -t "$USER" || tmux new-session -s "$USER"
 fi
