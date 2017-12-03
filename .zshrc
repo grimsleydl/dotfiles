@@ -101,6 +101,7 @@ zplugin light "rawkode/zsh-docker-run"
 zplugin ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh"; zplugin light trapd00r/LS_COLORS
 
 # zplugin ice mv"autocompletion.zsh -> _tldr"; zplugin load "tldr-pages/tldr-node-client"
+zplugin ice as"command" pick"tldr"; zplugin light "pepa65/tldr-bash-client"
 
 zplugin ice as"command" pick"bin/git-submodule-rewrite"; zplugin light "jeremysears/scripts"
 zplugin ice as"command"; zplugin light "TheLocehiliosan/yadm"
