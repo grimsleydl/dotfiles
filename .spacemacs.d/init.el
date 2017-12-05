@@ -551,6 +551,7 @@ Put your configuration code here, except for variables that  should be set befor
   ;; (spacemacs/load-theme 'gruvbox)
   (setq password-cache-expiry nil)
   (setq tramp-use-ssh-controlmaster-options nil)
+  (setq epa-pinentry-mode 'loopback)
   (setq tramp-default-method "sshx")
   ;; (add-to-list 'tramp-default-proxies-alist
   ;;              '(nil "\\`root\\'" "/ssh:%h:"))
