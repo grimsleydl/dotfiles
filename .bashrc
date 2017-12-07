@@ -1,0 +1,1 @@
+/home/gromzly/.bashrc##home
