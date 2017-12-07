@@ -100,3 +100,4 @@ tags
 !.tmux.conf
 !.tmux.conf.local
 !.bashrc##*
+!.config/wsltty/
