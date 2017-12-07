@@ -20,6 +20,7 @@
     nlinum
     (org :variables
          org-want-todo-bindings t)
+    (pdf-tools)
     (shell :variables
            shell-default-height 30
            shell-default-position 'bottom)
@@ -238,7 +239,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(snazzy
+   dotspacemacs-themes '((nord :location (recipe :fetcher github
+                                                 :repo "arcticicestudio/nord-emacs"))
                          gruvbox
                          moe-dark
                          moe-light

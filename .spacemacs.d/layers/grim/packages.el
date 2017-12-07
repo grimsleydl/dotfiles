@@ -33,9 +33,15 @@
        drag-stuff
        ;; dired+
        git-auto-commit-mode
+       smart-jump
        sx
        zoom
       ))
+
+(defun grim/init-smart-jump ()
+  "Initialize smart-jump"
+  (use-package smart-jump))
+
 (defun grim/init-zoom ()
   "Initialize zoom"
   (use-package zoom))
