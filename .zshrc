@@ -156,4 +156,4 @@ fi
 if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
     tmux attach-session -t "$USER" || tmux new-session -s "$USER"
 fi
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3"
+AUTOSUGGESTION_HIGHLIGHT_COLOR="fg=8"

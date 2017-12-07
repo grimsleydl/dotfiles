@@ -1,7 +1,3 @@
-# every damn terminal is bad at this.
-# bindkey "^[[1;5C" forward-word
-# bindkey "^[[1;5D" backward-word
-
 bindkey '^_' undo
 # bindkey '^t' _marker_get
 bindkey ';x' zaw

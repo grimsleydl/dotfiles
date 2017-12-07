@@ -20,7 +20,6 @@
     nlinum
     (org :variables
          org-want-todo-bindings t)
-    (pdf-tools)
     (shell :variables
            shell-default-height 30
            shell-default-position 'bottom)
@@ -239,8 +238,7 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '((nord :location (recipe :fetcher github
-                                                 :repo "arcticicestudio/nord-emacs"))
+   dotspacemacs-themes '(snazzy
                          gruvbox
                          moe-dark
                          moe-light
@@ -527,8 +525,6 @@ This function is called at the very end of Spacemacs startup, after
 layer configuration.
 Put your configuration code here, except for variables that  should be set before packages are loaded."
   (require 'grim-hydras)
-  (setq nord-comment-brightness 15)
-  (setq nord-region-highlight "snowstorm")
   (setq hydra-look-for-remap t)
   (global-hungry-delete-mode)
   (global-prettify-symbols-mode 1)

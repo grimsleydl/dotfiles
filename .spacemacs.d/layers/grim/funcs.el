@@ -458,7 +458,7 @@ buffer's name.
 (defun grim/buffer-face-mode-variable ()
   "Set font to a variable width (proportional) fonts in current buffer"
   (interactive)
-  (setq buffer-face-mode-face '(:family "iaWriter Duospace" ))
+  (setq buffer-face-mode-face '(:family "Fira Sans"))
   (buffer-face-mode))
 
 ;; Use monospaced font faces in current buffer
