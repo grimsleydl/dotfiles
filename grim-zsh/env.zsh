@@ -20,4 +20,4 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 
 export DOCKER_HOST=tcp://0.0.0.0:2375
 
-export TERM="xterm-256color"
+# export TERM="xterm-256color"

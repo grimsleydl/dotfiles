@@ -527,6 +527,8 @@ This function is called at the very end of Spacemacs startup, after
 layer configuration.
 Put your configuration code here, except for variables that  should be set before packages are loaded."
   (require 'grim-hydras)
+  (setq nord-comment-brightness 15)
+  (setq nord-region-highlight "snowstorm")
   (setq hydra-look-for-remap t)
   (global-hungry-delete-mode)
   (global-prettify-symbols-mode 1)
