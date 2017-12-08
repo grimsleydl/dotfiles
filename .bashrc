@@ -1,1 +1,1 @@
-/home/gromzly/.bashrc##home
+/home/gromzly/.bashrc##vps
