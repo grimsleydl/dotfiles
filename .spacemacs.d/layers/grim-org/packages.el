@@ -29,7 +29,9 @@
 
 ;;; Code:
 (defconst grim-org-packages
-  '((org-config :location local)
+  '(
+    interleave
+    (org-config :location local)
     org-wc
     nanowrimo
     (org-bullets :location (recipe :fetcher github :repo "Kaligule/org-bullets"))
@@ -37,6 +39,9 @@
     ;; worf
     )
   )
+(defun grim-org/init-interleave ()
+  (use-package interleave
+    :defer t))
 
 (defun grim-org/init-org-bullets ()
   (use-package org-bullets
