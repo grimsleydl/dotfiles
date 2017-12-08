@@ -119,7 +119,6 @@ export DISPLAY=:0.0
 export NO_AT_BRIDGE=1
 export CLICOLOR=1
 export PATH=$PATH:~/.cargo/bin
-export BORG_PASSPHRASE=fadilthrejk
 
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export DOCKER_HOST=tcp://0.0.0.0:2375.
