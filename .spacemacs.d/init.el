@@ -37,7 +37,7 @@
     imenu-list
     ;; origami
     pandoc
-    ;; ranger
+    ranger
     ;; search-engine
     ;; speed-reading
     treemacs
