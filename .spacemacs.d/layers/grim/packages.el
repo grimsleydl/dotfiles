@@ -76,10 +76,10 @@
 (defun grim/init-dired-collapse ()
   "Initialize dired-collapse"
   (use-package dired-collapse
-  ;; :ensure t
-  ;; :after dired
+  :ensure t
+  :after dired
   :config
-  (add-hook 'dired-after-readin-hook 'dired-collapse-mode)
+  (add-hook 'dired-mode-hook 'dired-collapse-mode)
   ))
 
 (defun grim/init-dired-rainbow ()
