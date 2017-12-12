@@ -16,6 +16,7 @@
   ("k" org-link-edit-forward-barf "forward barf")
   ("h" org-link-edit-backward-slurp "backward slurp")
   ("j" org-link-edit-backward-barf "backward barf")
+  ("i" my-org-insert-link "insert link")
   ("r" jk/unlinkify "remove link")
   ("q" nil "cancel" :color blue))
 
