@@ -3,7 +3,7 @@ alias xx='patool extract'     #size,show type,human readable
 alias killit='kill -9 %%'
 
 alias als='alias | grep -i --'
-
+alias logs="journalctl -f -u"
 
 # if exa is installed
 if (( $+commands[exa] )) ; then
