@@ -1,30 +1,4 @@
 if test -r ~/.profile; then . ~/.profile; fi
-# function zzplugin(){
-#     [[ -d ${ZDOTDIR:-$HOME}/.zplugin ]] || {
-#         ZPLG_HOME="${ZDOTDIR:-$HOME}/.zplugin"
-
-#         if ! test -d "$ZPLG_HOME"; then
-#             mkdir "$ZPLG_HOME"
-#             chmod g-rwX "$ZPLG_HOME"
-#         fi
-
-#         if test -d "$ZPLG_HOME/bin/.git"; then
-#             cd "$ZPLG_HOME/bin"
-#             git pull origin master
-#         else
-#             cd "$ZPLG_HOME"
-#             git clone https://github.com/psprint/zplugin.git bin
-#         fi
-#     }
-#     source ${ZDOTDIR:-$HOME}/.zplugin/bin/zplugin.zsh
-# function zpload(){
-#     zplugin load "$@"
-# }
-# function zpsnip(){
-#     zplugin snippet "$@"
-# }
-# }
-# zzplugin
 
 source "$HOME/.zplugin/bin/zplugin.zsh"
 
@@ -36,6 +10,7 @@ zplugin snippet "OMZ::lib/git.zsh"
 # (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### Added by Zplugin's installer
 
+zplugin light "djui/alias-tips"
 zplugin snippet "PZT::modules/environment/init.zsh"
 zplugin snippet "PZT::modules/history/init.zsh"
 zplugin snippet "PZT::modules/directory/init.zsh"
@@ -43,7 +18,7 @@ zplugin snippet "PZT::modules/directory/init.zsh"
 # zplugin snippet "PZT::modules/completion/init.zsh"
 zplugin snippet "PZT::modules/fasd/init.zsh"
 zplugin snippet "PZT::modules/editor/init.zsh"
-zplugin light "djui/alias-tips"
+
 export ENHANCD_COMMAND=ecd
 zplugin load "b4b4r07/enhancd"
 zplugin load "b4b4r07/ssh-keyreg"
@@ -64,23 +39,30 @@ zplugin snippet "OMZ::plugins/sudo/sudo.plugin.zsh"
 # zplugin snippet "OMZ::plugins/globalias/globalias.plugin.zsh"
 zplugin snippet "OMZ::plugins/npm/npm.plugin.zsh"
 zplugin snippet "OMZ::plugins/perms/perms.plugin.zsh"
+zplugin snippet "OMZ::plugins/systemd/systemd.plugin.zsh"
+# zplugin snippet "OMZ::plugins/wd/wd.plugin.zsh"
+
+zplugin snippet "OMZ::plugins/ubuntu/ubuntu.plugin.zsh"
+zplugin snippet "OMZ::plugins/yum/yum.plugin.zsh"
+
 # zplugin load "mafredri/zsh-async"
 # zplugin ice wait'!1'; zplugin load "sindresorhus/pure"
 zplugin load "geometry-zsh/geometry"
 zplugin load "desyncr/geometry-dir-info-prompt"
+
 zplugin light "unixorn/warhol.plugin.zsh"
 
-zplugin light zdharma/zui
 zplugin ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'
-zplugin light zdharma/zplugin-crasis
-
 zplugin light "zsh-users/zsh-completions"
 
 zplugin ice wait'1' atload'_zsh_autosuggest_start'; zplugin load "zsh-users/zsh-autosuggestions"
 zplugin light "zsh-users/zsh-history-substring-search"
 zplugin load "zsh-users/zaw"
 zplugin load "ajsalminen/zaw-src-apt"
+
 # zplugin snippet "PZT::modules/history-substring-search/init.zsh"
+zplugin light zdharma/zplugin-crasis
+zplugin light zdharma/zui
 zplugin load "zdharma/history-search-multi-word"
 
 zplugin load "robertzk/send.zsh"
@@ -126,6 +108,7 @@ zplugin ice as"command" pick"fpp"; zplugin light "facebook/PathPicker"
 
 # zplugin load "changyuheng/zsh-interactive-cd"
 zplugin load "psprint/zsh-editing-workbench"
+zplugin load "psprint/zsh-navigation-tools"
 
 zplugin load "GuilleDF/zsh-ubuntualiases"
 zplugin ice pick"dotfiles/zsh/upr.zsh"; zplugin load "io-monad/dotfiles"
