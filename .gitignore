@@ -92,6 +92,8 @@ com_crashlytics_export_strings.xml
 .tags
 tags
 
+secrets/secret.zsh
+
 # personal whitelist
 !.zshrc
 !grim-zsh/
