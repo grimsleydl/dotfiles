@@ -29,7 +29,7 @@
   "of" 'grim-org/reflash-indentation
   "oj" 'sk/hydra-org-jump/body
   "ol" 'hydra-org-link-edit/body
-  "oL" 'my-org-insert-link
+  "oL" 'org-cliplink
   "oo" 'sk/hydra-org-organize/body
   "op" 'sk/hydra-org-property/body
   "or" 'my/org-refile-and-jump

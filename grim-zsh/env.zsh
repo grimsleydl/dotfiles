@@ -1,3 +1,7 @@
+# OpenSUSE stuff
+export MAN_POSIXLY_CORRECT=1
+export ALSA_CONFIG_PATH=/etc/alsa-pulse.conf
+
 # export PROMPT_GEOMETRY_COLORIZE_SYMBOL="true"
 # export PROMPT_GEOMETRY_COLORIZE_ROOT="true"
 export PROMPT_GEOMETRY_EXEC_TIME="true"
