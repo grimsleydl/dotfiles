@@ -9,6 +9,14 @@ bindkey "^R" history-search-multi-word
 zle -N beginning-of-somewhere beginning-or-end-of-somewhere
 zle -N end-of-somewhere beginning-or-end-of-somewhere
 
+# use vi navigation keys in menu completion
+bindkey -M menuselect '^h' vi-backward-char
+bindkey -M menuselect '^k' vi-up-line-or-history
+bindkey -M menuselect '^l' vi-forward-char
+bindkey -M menuselect '^j' vi-down-line-or-history
+bindkey -M menuselect '^p' vi-up-line-or-history
+bindkey -M menuselect '^n' vi-down-line-or-history
+
 if [[ -n "$key_info" ]]; then
     # Emacs
     bindkey -M emacs "$key_info[Control]P" history-substring-search-up

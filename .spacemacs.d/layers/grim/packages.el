@@ -24,6 +24,7 @@
 ;;       ;; vimish-fold
 ;;       ;; evil-vimish-fold
        dired-collapse
+       dired-filter
        diredfl
        ;; dired-k
        dired-narrow
@@ -55,6 +56,11 @@
      ;;           ("s" . sx-search)
                ))
     )
+
+(defun grim/init-dired-filter ()
+  "Initialize dired-filter"
+  (use-package dired-filter))
+
 (defun grim/init-diredfl ()
   "Initialize dired-k"
   (use-package diredfl
