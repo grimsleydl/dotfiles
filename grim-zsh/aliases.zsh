@@ -5,6 +5,9 @@ alias killit='kill -9 %%'
 alias als='alias | grep -i --'
 alias logs="journalctl -f -u"
 
+alias zyp='zypper'
+
+alias rival='sudo rival'
 # if exa is installed
 if (( $+commands[exa] )) ; then
     alias ls=exa
@@ -14,3 +17,6 @@ if (( $+commands[exa] )) ; then
     alias lh='exa -alh'
 
 fi
+
+# get keyboard devnode
+alias getkeyboard="grep -E  'Handlers|EV=' /proc/bus/input/devices | grep -B1 'EV=120013' | grep -Eo 'event[0-9]+'"

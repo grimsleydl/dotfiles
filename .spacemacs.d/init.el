@@ -41,7 +41,7 @@
     ;; search-engine
     ;; speed-reading
     treemacs
-    ;; unimpaired
+    unimpaired
     writeroom))
 (defvar dotspacemacs/layers/langs
   '(emacs-lisp
@@ -115,6 +115,7 @@ This function should only modify configuration layer settings."
                                       evil-embrace
                                       evil-goggles
                                       evil-smartparens
+                                      exato
                                       fancy-narrow
                                       focus
                                       ;; fzf
@@ -160,7 +161,7 @@ This function should only modify configuration layer settings."
                                       wc-mode
                                       writegood-mode)
 
-   dotspacemacs-excluded-packages '(evil-unimpaired)
+   dotspacemacs-excluded-packages '()
    dotspacemacs-frozen-packages '()
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
