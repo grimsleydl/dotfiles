@@ -41,7 +41,6 @@
     ;; search-engine
     ;; speed-reading
     treemacs
-    unimpaired
     writeroom))
 (defvar dotspacemacs/layers/langs
   '(emacs-lisp
