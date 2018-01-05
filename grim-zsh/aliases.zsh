@@ -12,9 +12,9 @@ zse() {
     zypper se -s "$1" | grep -v "| i586   |" # search, filter x86 pacages
 }
 
-
+alias Gi="| grep -i"
 alias psa="ps aux"
-alias psg="ps aux | grep "
+alias psg="ps aux | grep"
 
 alias ka9='killall -9'
 alias k9='kill -9'
