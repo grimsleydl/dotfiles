@@ -1,0 +1,4 @@
+rofi.theme: /usr/share/rofi/themes/gruvbox-dark-hard.rasi
+
+rofi.terminal:       urxvt
+rofi.case-sensitive: false
