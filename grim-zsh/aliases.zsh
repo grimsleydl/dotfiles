@@ -19,6 +19,7 @@ alias psg="ps aux | grep"
 alias ka9='killall -9'
 alias k9='kill -9'
 
+alias scu='systemctl --user'
 
 alias rival='sudo rival'
 # if exa is installed
