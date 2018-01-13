@@ -1,1 +1,1 @@
-/home/gromzly/.bashrc##home
+/home/davi2570/.bashrc##lat
