@@ -1,2 +1,4 @@
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
+
 load "arcticicestudio/nord-xresources" pick "src/nord"
 load "prozum/pkgbuild2spec" pick "pkgbuild2spec.sh"

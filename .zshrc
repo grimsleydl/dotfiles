@@ -96,6 +96,12 @@ zplugin ice as"command" pick"bin/tat"; zplugin light "thoughtbot/dotfiles"
 zplugin ice atclone"./install.py atpull./install.py"; zplugin light "pindexis/marker"
 zplugin snippet "/home/$(whoami)/.local/share/marker/marker.sh"
 
+############
+# COMMANDS #
+############
+zplugin ice as"command" pick"yank" make; zplugin light mptre/yank
+
+
 zplugin ice pick"shell/key-bindings.zsh"; zplugin light "junegunn/fzf"
 zplugin ice pick"shell/completion.zsh"; zplugin light "junegunn/fzf"
 export FZF_COMPLETION_TRIGGER=',,'
