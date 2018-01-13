@@ -11,7 +11,7 @@
     better-defaults
     command-log
     colors
-    evil-cleverparens
+    ;; evil-cleverparens
     evil-commentary
     (evil-snipe :variables
                 evil-snipe-enable-alternate-f-and-t-behaviors t)
@@ -590,7 +590,7 @@ Put your configuration code here, except for variables that  should be set befor
   (setq visual-fill-column-center-text t)
   (setq scroll-margin 8)
 
-  (spacemacs/toggle-evil-cleverparens-on)
+  ;; (spacemacs/toggle-evil-cleverparens-on)
   (setq golden-ratio-auto-scale nil)
   ;; (setq helm-echo-input-in-header-line nil)
   (setq visual-fill-column-width 100)
