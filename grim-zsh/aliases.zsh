@@ -16,6 +16,8 @@ alias Gi="| grep -i"
 alias psa="ps aux"
 alias psg="ps aux | grep"
 
+alias Y="| yank"
+
 alias ka9='killall -9'
 alias k9='kill -9'
 
