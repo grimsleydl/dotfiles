@@ -1,0 +1,2 @@
+load "arcticicestudio/nord-xresources" pick "src/nord"
+load "prozum/pkgbuild2spec" pick "pkgbuild2spec.sh"
