@@ -1,1 +1,0 @@
-/home/davi2570/.bashrc##lat
