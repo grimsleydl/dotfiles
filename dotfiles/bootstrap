@@ -1,3 +1,7 @@
+git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
+ln -s ~/.yadm-project/yadm ~/bin/yadm
+
+# yadm config local.class lat
 cd ~
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
 

@@ -2,7 +2,8 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 (defvar dotspacemacs/layers/core
-  '(ivy
+  '((ivy :variables
+         ivy-enable-advanced-buffer-information t)
     (auto-completion :variables
                      auto-completion-enable-sort-by-usage t
                      auto-completion-enable-snippets-in-popup t
@@ -122,7 +123,7 @@ This function should only modify configuration layer settings."
                                       ;; hideshow-orgmode
                                       imenu-anywhere
                                       indent-tools
-                                      ivy-rich
+                                      ;; ivy-rich
                                       key-chord
                                       kill-or-bury-alive
                                       lispy
