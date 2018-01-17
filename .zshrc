@@ -65,7 +65,8 @@ zplugin ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'
 # ZSH-USERS #
 #############
 zplugin light "zsh-users/zsh-completions"
-zplugin ice wait'1' atload'_zsh_autosuggest_start'; zplugin load "zsh-users/zsh-autosuggestions"
+# zplugin ice wait'1' atload'_zsh_autosuggest_start';
+zplugin load "zsh-users/zsh-autosuggestions"
 zplugin light "zsh-users/zsh-history-substring-search"
 zplugin load "zsh-users/zaw"
 # zplugin load "ajsalminen/zaw-src-apt"
