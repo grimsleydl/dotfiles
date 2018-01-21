@@ -1,3 +1,8 @@
+export PATH="/usr/sbin:$PATH"
+# set PATH so it includes user's private bin directories
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # OpenSUSE stuff
 export MAN_POSIXLY_CORRECT=1
 export ALSA_CONFIG_PATH=/etc/alsa-pulse.conf

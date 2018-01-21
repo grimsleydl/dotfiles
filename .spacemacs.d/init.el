@@ -532,6 +532,7 @@ This function is called at the very end of Spacemacs startup, after
 layer configuration.
 Put your configuration code here, except for variables that  should be set before packages are loaded."
   (require 'grim-hydras)
+  (setq vc-follow-symlinks t)
   (setq nord-comment-brightness 15)
   (setq nord-region-highlight "snowstorm")
   (load-theme 'nord t)

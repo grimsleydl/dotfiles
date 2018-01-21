@@ -2,6 +2,8 @@ alias _='sudo'
 alias xx='patool extract'     #size,show type,human readable
 alias killit='kill -9 %%'
 
+alias dfh='df -h'
+
 alias als='alias | grep -i --'
 alias logs="journalctl -f -u"
 
