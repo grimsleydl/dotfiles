@@ -114,6 +114,7 @@ This function should only modify configuration layer settings."
                                       ;; evil-briefcase
                                       evil-embrace
                                       evil-goggles
+                                      evil-replace-with-register
                                       evil-smartparens
                                       exato
                                       fancy-narrow

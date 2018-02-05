@@ -167,6 +167,11 @@
                                (file+datetree "~/Dropbox/org/personal/journal.org")
                                "%?"
                                )
+                              ;; TICKET
+                              ("w" "Work ticket with date" plain
+                               (file+datetree "~/Documents/work-log.org")
+                               "%?"
+                               )
                               ;; WORK JOURNAL WITH DATE
                               ;; ("jw" "Work journal entry with date" plain
                               ;;  (file+datetree (concat org-directory "/personal/work.org") "Journal")
