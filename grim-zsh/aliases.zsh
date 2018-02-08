@@ -29,7 +29,11 @@ alias xx='patool extract'     #size,show type,human readable
 alias Y="| yank"
 alias yaa="yadm add"
 alias yac="yadm commit"
-alias ya="yadm commit -a -m"
+alias yaf="yadm fetch"
+alias yap="yadm pull"
+alias yaP="yadm push"
+alias yas="yadm status"
+alias yaac="yadm commit -a -m"
 
 # zypper
 alias zyp='zypper'
