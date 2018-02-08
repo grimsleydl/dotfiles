@@ -41,7 +41,9 @@
   "oP" 'grim/paste-newline-above
   "ou" 'hydra-undo-tree/body
   "oy" 'grim/my-copy-simple
-  "fF" 'fzf
+  "fF" 'counsel-fzf
+  "d SPC" 'counsel-dired-jump
+  "f SPC" 'counsel-file-jump
   )
 (evil-define-operator evil-narrow-indirect (beg end type)
   "Indirectly narrow the region from BEG to END."
