@@ -62,6 +62,8 @@ zplugin load "zsh-users/zaw"
 zplugin ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'; zplugin light zdharma/zplugin-crasis
 zplugin light zdharma/zui
 zplugin load "zdharma/history-search-multi-word"
+zstyle ":plugin:history-search-multi-word" clear-on-cancel "yes"
+
 zplugin load "psprint/zsh-editing-workbench"
 zplugin load "psprint/zsh-navigation-tools"
 # zplugin load "psprint/zzcomplete"
