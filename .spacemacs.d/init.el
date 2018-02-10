@@ -1,78 +1,73 @@
 ;; -*- mode: emacs-lisp -*-
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
-(defvar dotspacemacs/layers/core
-  '((ivy :variables
-         ivy-enable-advanced-buffer-information t)
-    (auto-completion :variables
-                     auto-completion-enable-sort-by-usage t
-                     auto-completion-enable-snippets-in-popup t
-                     auto-completion-enable-help-tooltip t
-                     )
-    better-defaults
-    command-log
-    colors
-    ;; evil-cleverparens
-    evil-commentary
-    (evil-snipe :variables
-                evil-snipe-enable-alternate-f-and-t-behaviors t)
-    git
-    github
-    nlinum
-    (org :variables
-         org-want-todo-bindings t)
-    pdf-tools
-    (shell :variables
-           shell-default-height 30
-           shell-default-position 'bottom)
-    syntax-checking
-    themes-megapack
-    ;; version-control
-    vim-empty-lines))
-(defvar dotspacemacs/layers/extra
-  '(;; dash
-    ;; deft
-    ;; emoji
-    ;; eyebrowse
-    ibuffer
-    imenu-list
-    ;; origami
-    pandoc
-    ranger
-    ;; search-engine
-    ;; speed-reading
-    treemacs
-    writeroom))
-(defvar dotspacemacs/layers/langs
-  '(emacs-lisp
-    autohotkey
-    ;; docker
-    ;; (haskell :variables
-    ;;          haskell-enable-hindent-style "chris-done")
-    ;; (html :variables
-    ;;       scss-compile-at-save nil)
-    javascript
-    ;; (latex :variables
-    ;;        latex-enable-folding t
-    ;;        latex-enable-auto-fill t)
-    markdown
-    ;; nginx
-    ;; (python)
-    ;; (ipython-notebook)
-    shell-scripts
-    elixir
-    (elm :variables
-         elm-sort-imports-on-save t
-         ;; elm-format-command ;; "elm-format-0.18"
-         )
-    ;; fsharp
-    windows-scripts
-    yaml))
-(defvar dotspacemacs/layers/tools
-  '(systemd))
-(defvar dotspacemacs/layers/local
-  '((grim :location local)
-    (grim-org :location local)))
+(defvar dotspacemacs/layers/core '((ivy :variables
+                                        ivy-enable-advanced-buffer-information t)
+                                   (auto-completion :variables
+                                                    auto-completion-enable-sort-by-usage t
+                                                    auto-completion-enable-snippets-in-popup t
+                                                    auto-completion-enable-help-tooltip t)
+                                   better-defaults
+                                   command-log
+                                   colors
+                                   ;; evil-cleverparens
+                                   evil-commentary
+                                   (evil-snipe :variables
+                                               evil-snipe-enable-alternate-f-and-t-behaviors t)
+                                   git
+                                   github
+                                   nlinum
+                                   (org :variables
+                                        org-want-todo-bindings t)
+                                   pdf-tools
+                                   (shell :variables
+                                          shell-default-height 30
+                                          shell-default-position 'bottom)
+                                   syntax-checking
+                                   themes-megapack
+                                   ;; version-control
+                                   vim-empty-lines))
+(defvar dotspacemacs/layers/extra '( ;; dash
+                                    ;; deft
+                                    (elfeed :variables
+                                            rmh-elfeed-org-files
+                                            (list "~/.elfeed/private/elfeed1.org"))
+                                    ;; emoji
+                                    ;; eyebrowse
+                                    ibuffer
+                                    imenu-list
+                                    ;; origami
+                                    pandoc
+                                    ranger
+                                    ;; search-engine
+                                    ;; speed-reading
+                                    treemacs
+                                    writeroom))
+(defvar dotspacemacs/layers/langs '(emacs-lisp
+                                    autohotkey
+                                    ;; (haskell :variables
+                                    ;;          haskell-enable-hindent-style "chris-done")
+                                    ;; (html :variables
+                                    ;;       scss-compile-at-save nil)
+                                    javascript
+                                    ;; (latex :variables
+                                    ;;        latex-enable-folding t
+                                    ;;        latex-enable-auto-fill t)
+                                    markdown
+                                    ;; nginx
+                                    ;; (python)
+                                    ;; (ipython-notebook)
+                                    shell-scripts
+                                    elixir
+                                    (elm :variables
+                                         elm-sort-imports-on-save t)
+                                    ;; fsharp
+                                    windows-scripts
+                                    yaml))
+(defvar dotspacemacs/layers/tools '(systemd
+                                    docker))
+(defvar dotspacemacs/layers/local '((grim :location local)
+                                    (grim-org :location local)))
 
 (defun dotspacemacs/layers ()
   "Layer configuration:
@@ -114,6 +109,7 @@ This function should only modify configuration layer settings."
                                       ;; amx
                                       ;; fancy-narrow
                                       ;; darkroom
+                                      docker-compose-mode
                                       dotenv-mode
                                       draft-mode
                                       electric-spacing
@@ -171,7 +167,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(exec-path-from-shell)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -720,4 +716,4 @@ Put your configuration code here, except for variables that  should be set befor
 
 (setq custom-file "~/.spacemacs.d/custom.el")
 (load custom-file 'noerror)
-(defun dotspacemacs/emacs-custom-settings ())
+;; (defun dotspacemacs/emacs-custom-settings ())
