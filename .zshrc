@@ -46,21 +46,6 @@ zplugin snippet "OMZ::plugins/suse/suse.plugin.zsh"
 zplugin snippet "OMZ::plugins/yum/yum.plugin.zsh"
 
 
-
-export ENHANCD_COMMAND=ecd
-zplugin load "b4b4r07/enhancd"
-zplugin load "b4b4r07/ssh-keyreg"
-# zplugin load "b4b4r07/auto-fu.zsh"
-zplugin load "supercrabtree/k"
-# zplugin load "psprint/zzcomplete"
-# zplugin load "mollifier/anyframe"
-
-zplugin ice as"command" pick"fasd"; zplugin light "whjvenyl/fasd"
-zplugin light "unixorn/warhol.plugin.zsh"
-zplugin ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh"; zplugin light trapd00r/LS_COLORS
-
-zplugin ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'
-
 #############
 # ZSH-USERS #
 #############
@@ -71,11 +56,33 @@ zplugin light "zsh-users/zsh-history-substring-search"
 zplugin load "zsh-users/zaw"
 # zplugin load "ajsalminen/zaw-src-apt"
 
+###########
+# ZDHARMA #
+###########
 zplugin ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'; zplugin light zdharma/zplugin-crasis
 zplugin light zdharma/zui
 zplugin load "zdharma/history-search-multi-word"
+zstyle ":plugin:history-search-multi-word" clear-on-cancel "yes"
 
-zplugin load "robertzk/send.zsh"
+zplugin load "psprint/zsh-editing-workbench"
+zplugin load "psprint/zsh-navigation-tools"
+# zplugin load "psprint/zzcomplete"
+
+########
+# MISC #
+########
+export ENHANCD_COMMAND=ecd
+zplugin load "b4b4r07/enhancd"
+zplugin load "b4b4r07/ssh-keyreg"
+# zplugin load "b4b4r07/auto-fu.zsh"
+zplugin load "supercrabtree/k"
+# zplugin load "mollifier/anyframe"
+
+zplugin ice as"command" pick"fasd"; zplugin light "whjvenyl/fasd"
+zplugin light "unixorn/warhol.plugin.zsh"
+zplugin ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh"; zplugin light trapd00r/LS_COLORS
+
+# zplugin load "robertzk/send.zsh"
 zplugin light "peterhurford/git-it-on.zsh"
 zplugin light "seletskiy/zsh-git-smart-commands"
 # Binary release in archive, from Github-releases page; after automatic unpacking it provides command "fzf"
@@ -90,10 +97,6 @@ zplugin light "rawkode/zsh-docker-run"
 # zplugin ice mv"autocompletion.zsh -> _tldr"; zplugin load "tldr-pages/tldr-node-client"
 zplugin ice as"command" pick"tldr"; zplugin light "pepa65/tldr-bash-client"
 
-zplugin ice as"command" pick"bin/git-submodule-rewrite"; zplugin light "jeremysears/scripts"
-zplugin ice as"command"; zplugin light "TheLocehiliosan/yadm"
-zplugin ice as"command"; zplugin light "skx/sysadmin-util"
-zplugin ice as"command" pick"bin/tat"; zplugin light "thoughtbot/dotfiles"
 zplugin ice atclone"./install.py atpull./install.py"; zplugin light "pindexis/marker"
 zplugin snippet "/home/$(whoami)/.local/share/marker/marker.sh"
 
@@ -101,7 +104,10 @@ zplugin snippet "/home/$(whoami)/.local/share/marker/marker.sh"
 # COMMANDS #
 ############
 zplugin ice as"command" pick"yank" make; zplugin light mptre/yank
-
+zplugin ice as"command" pick"bin/git-submodule-rewrite"; zplugin light "jeremysears/scripts"
+zplugin ice as"command"; zplugin light "TheLocehiliosan/yadm"
+zplugin ice as"command"; zplugin light "skx/sysadmin-util"
+zplugin ice as"command" pick"bin/tat"; zplugin light "thoughtbot/dotfiles"
 
 zplugin ice pick"shell/key-bindings.zsh"; zplugin light "junegunn/fzf"
 zplugin ice pick"shell/completion.zsh"; zplugin light "junegunn/fzf"
@@ -118,8 +124,6 @@ zplugin load "liangguohuan/fzf-marker"
 zplugin ice as"command" pick"fpp"; zplugin light "facebook/PathPicker"
 
 # zplugin load "changyuheng/zsh-interactive-cd"
-zplugin load "psprint/zsh-editing-workbench"
-zplugin load "psprint/zsh-navigation-tools"
 
 zplugin load "GuilleDF/zsh-ubuntualiases"
 zplugin ice pick"dotfiles/zsh/upr.zsh"; zplugin load "io-monad/dotfiles"

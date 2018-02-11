@@ -1,76 +1,73 @@
 ;; -*- mode: emacs-lisp -*-
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
-(defvar dotspacemacs/layers/core
-  '((ivy :variables
-         ivy-enable-advanced-buffer-information t)
-    (auto-completion :variables
-                     auto-completion-enable-sort-by-usage t
-                     auto-completion-enable-snippets-in-popup t
-                     auto-completion-enable-help-tooltip t
-                     )
-    better-defaults
-    command-log
-    colors
-    ;; evil-cleverparens
-    evil-commentary
-    (evil-snipe :variables
-                evil-snipe-enable-alternate-f-and-t-behaviors t)
-    git
-    github
-    nlinum
-    (org :variables
-         org-want-todo-bindings t)
-    pdf-tools
-    (shell :variables
-           shell-default-height 30
-           shell-default-position 'bottom)
-    syntax-checking
-    themes-megapack
-    ;; version-control
-    vim-empty-lines))
-(defvar dotspacemacs/layers/extra
-  '(;; dash
-    ;; deft
-    ;; emoji
-    ;; eyebrowse
-    ibuffer
-    imenu-list
-    ;; origami
-    pandoc
-    ranger
-    ;; search-engine
-    ;; speed-reading
-    treemacs
-    writeroom))
-(defvar dotspacemacs/layers/langs
-  '(emacs-lisp
-    autohotkey
-    ;; docker
-    ;; (haskell :variables
-    ;;          haskell-enable-hindent-style "chris-done")
-    ;; (html :variables
-    ;;       scss-compile-at-save nil)
-    javascript
-    ;; (latex :variables
-    ;;        latex-enable-folding t
-    ;;        latex-enable-auto-fill t)
-    markdown
-    ;; nginx
-    ;; (python)
-    ;; (ipython-notebook)
-    shell-scripts
-    elixir
-    (elm :variables
-         elm-sort-imports-on-save t
-         ;; elm-format-command ;; "elm-format-0.18"
-         )
-    ;; fsharp
-    windows-scripts
-    yaml))
-(defvar dotspacemacs/layers/local
-  '((grim :location local)
-    (grim-org :location local)))
+(defvar dotspacemacs/layers/core '((ivy :variables
+                                        ivy-enable-advanced-buffer-information t)
+                                   (auto-completion :variables
+                                                    auto-completion-enable-sort-by-usage t
+                                                    auto-completion-enable-snippets-in-popup t
+                                                    auto-completion-enable-help-tooltip t)
+                                   better-defaults
+                                   command-log
+                                   colors
+                                   ;; evil-cleverparens
+                                   evil-commentary
+                                   (evil-snipe :variables
+                                               evil-snipe-enable-alternate-f-and-t-behaviors t)
+                                   git
+                                   github
+                                   nlinum
+                                   (org :variables
+                                        org-want-todo-bindings t)
+                                   pdf-tools
+                                   (shell :variables
+                                          shell-default-height 30
+                                          shell-default-position 'bottom)
+                                   syntax-checking
+                                   themes-megapack
+                                   ;; version-control
+                                   vim-empty-lines))
+(defvar dotspacemacs/layers/extra '( ;; dash
+                                    ;; deft
+                                    (elfeed :variables
+                                            rmh-elfeed-org-files
+                                            (list "~/.elfeed/private/elfeed1.org"))
+                                    ;; emoji
+                                    ;; eyebrowse
+                                    ibuffer
+                                    imenu-list
+                                    ;; origami
+                                    pandoc
+                                    ranger
+                                    ;; search-engine
+                                    ;; speed-reading
+                                    treemacs
+                                    writeroom))
+(defvar dotspacemacs/layers/langs '(emacs-lisp
+                                    autohotkey
+                                    ;; (haskell :variables
+                                    ;;          haskell-enable-hindent-style "chris-done")
+                                    ;; (html :variables
+                                    ;;       scss-compile-at-save nil)
+                                    javascript
+                                    ;; (latex :variables
+                                    ;;        latex-enable-folding t
+                                    ;;        latex-enable-auto-fill t)
+                                    markdown
+                                    ;; nginx
+                                    ;; (python)
+                                    ;; (ipython-notebook)
+                                    shell-scripts
+                                    elixir
+                                    (elm :variables
+                                         elm-sort-imports-on-save t)
+                                    ;; fsharp
+                                    windows-scripts
+                                    yaml))
+(defvar dotspacemacs/layers/tools '(systemd
+                                    docker))
+(defvar dotspacemacs/layers/local '((grim :location local)
+                                    (grim-org :location local)))
 
 (defun dotspacemacs/layers ()
   "Layer configuration:
@@ -80,6 +77,7 @@ This function should only modify configuration layer settings."
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
    dotspacemacs-distribution 'spacemacs
+
    ;; Lazy installation of layers (i.e. layers are installed only when a file
    ;; with a supported type is opened). Possible values are `all', `unused'
    ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
@@ -90,9 +88,11 @@ This function should only modify configuration layer settings."
    ;; variable `dotspacemacs-configuration-layers' to install it.
    ;; (default 'unused)
    dotspacemacs-enable-lazy-installation 'unused
+
    ;; If non-nil then Spacemacs will ask for confirmation before installing
    ;; a layer lazily. (default t)
    dotspacemacs-ask-for-lazy-installation t
+
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
@@ -102,12 +102,14 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layers (append dotspacemacs/layers/core
                                              dotspacemacs/layers/extra
                                              dotspacemacs/layers/langs
+                                             dotspacemacs/layers/tools
                                              dotspacemacs/layers/local)
 
    dotspacemacs-additional-packages '(all-the-icons
                                       ;; amx
                                       ;; fancy-narrow
                                       ;; darkroom
+                                      docker-compose-mode
                                       dotenv-mode
                                       draft-mode
                                       electric-spacing
@@ -116,7 +118,7 @@ This function should only modify configuration layer settings."
                                       evil-goggles
                                       evil-replace-with-register
                                       evil-smartparens
-                                      exato
+                                      ;; exato
                                       fancy-narrow
                                       focus
                                       ;; fzf
@@ -162,8 +164,11 @@ This function should only modify configuration layer settings."
                                       wc-mode
                                       writegood-mode)
 
-   dotspacemacs-excluded-packages '()
    dotspacemacs-frozen-packages '()
+
+   ;; A list of packages that will not be installed and loaded.
+   dotspacemacs-excluded-packages '(exec-path-from-shell)
+
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and deletes any unused
@@ -171,7 +176,7 @@ This function should only modify configuration layer settings."
    ;; installs only the used packages but won't delete unused ones. `all'
    ;; installs *all* packages supported by Spacemacs and never uninstalls them.
    ;; (default is `used-only')
-   dotspacemacs-install-packages 'used-but-keep-unused))
+   dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
   "Initialization:
@@ -188,25 +193,37 @@ It should only modify the values of Spacemacs settings."
    ;; `--insecure' which forces the value of this variable to nil.
    ;; (default t)
    dotspacemacs-elpa-https t
+
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    ;; (default 5)
    dotspacemacs-elpa-timeout 5
+
+   ;; Set `gc-cons-threshold' and `gc-cons-percentage' when startup finishes.
+   ;; This is an advanced option and should not be changed unless you suspect
+   ;; performance issues due to garbage collection operations.
+   ;; (default '(100000000 0.1))
+   dotspacemacs-gc-cons '(100000000 0.1)
+
    ;; If non-nil then Spacelpa repository is the primary source to install
-   ;; a locked version of packages. If nil then Spacemacs will install the lastest
-   ;; version of packages from MELPA. (default nil)
+   ;; a locked version of packages. If nil then Spacemacs will install the
+   ;; lastest version of packages from MELPA. (default nil)
    dotspacemacs-use-spacelpa nil
+
    ;; If non-nil then verify the signature for downloaded Spacelpa archives.
    ;; (default nil)
    dotspacemacs-verify-spacelpa-archives nil
+
    ;; If non-nil then spacemacs will check for updates at startup
    ;; when the current branch is not `develop'. Note that checking for
    ;; new versions works via git commands, thus it calls GitHub services
    ;; whenever you start Emacs. (default nil)
    dotspacemacs-check-for-update nil
+
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
-   ;; to `emacs-version'. (default nil)
-   dotspacemacs-elpa-subdirectory nil
+   ;; to `emacs-version'. (default 'emacs-version)
+   dotspacemacs-elpa-subdirectory 'emacs-version
+
    ;; One of `vim', `emacs' or `hybrid'.
    ;; `hybrid' is like `vim' except that `insert state' is replaced by the
    ;; `hybrid state' with `emacs' key bindings. The value can also be a list
@@ -220,6 +237,7 @@ It should only modify the values of Spacemacs settings."
                                        hybrid-mode-default-state 'normal)
    ;; If non-nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
+
    ;; Specify the startup banner. Default value is `official', it displays
    ;; the official spacemacs logo. An integer value is the index of text
    ;; banner, `random' chooses a random text banner in `core/banners'
@@ -227,6 +245,7 @@ It should only modify the values of Spacemacs settings."
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
    dotspacemacs-startup-banner 'official
+
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -236,10 +255,17 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-startup-lists '((recents . 5)
                                 (bookmarks . 5)
                                 (projects . 7))
+
    ;; True if the home buffer should respond to resize events. (default t)
    dotspacemacs-startup-buffer-responsive t
+
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'org-mode
+
+   ;; Initial message in the scratch buffer, such as "Welcome to Spacemacs!"
+   ;; (default nil)
+   dotspacemacs-initial-scratch-message nil
+
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
@@ -253,6 +279,16 @@ It should only modify the values of Spacemacs settings."
                          material-light
                          spacemacs-light
                          leuven)
+
+   ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
+   ;; `all-the-icons', `custom', `vim-powerline' and `vanilla'. The first three
+   ;; are spaceline themes. `vanilla' is default Emacs mode-line. `custom' is a
+   ;; user defined themes, refer to the DOCUMENTATION.org for more info on how
+   ;; to create your own spaceline theme. Value can be a symbol or list with\
+   ;; additional properties.
+   ;; (default '(spacemacs :separator wave :separator-scale 1.5))
+   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
@@ -289,12 +325,14 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-distinguish-gui-tab nil
    ;; If non-nil `Y' is remapped to `y$' in Evil states. (default nil)
    dotspacemacs-remap-Y-to-y$ t
+
    ;; If non-nil, the shift mappings `<' and `>' retain visual state if used
    ;; there. (default t)
    dotspacemacs-retain-visual-state-on-shift t
    ;; If non-nil, `J' and `K' move lines up and down when in visual mode.
    ;; (default nil)
    dotspacemacs-visual-line-move-text t
+
    ;; If non-nil, inverse the meaning of `g' in `:substitute' Evil ex-command.
    ;; (default nil)
    dotspacemacs-ex-substitute-global nil
@@ -407,6 +445,7 @@ It should only modify the values of Spacemacs settings."
    ;; over any automatically added closing parenthesis, bracket, quote, etc…
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
    dotspacemacs-smart-closing-parenthesis t
+   
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
    ;; emphasis the current one). (default 'all)
@@ -459,12 +498,11 @@ It should only modify the values of Spacemacs settings."
    ))
 
 (defun dotspacemacs/user-init ()
-  "Initialization function for user code.
-It is called immediately after `dotspacemacs/init', before layer configuration
-executes.
- This function is mostly useful for variables that need to be set
-before packages are loaded. If you are unsure, you should try in setting them in
-`dotspacemacs/user-config' first."
+  "Initialization for user code:
+This function is called immediately after `dotspacemacs/init', before layer
+configuration.
+It is mostly for variables that should be set before packages are loaded.
+If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
   (add-to-list 'load-path "~/.spacemacs.d/config/")
   (defvar lou-the-gc-max (* 512 1024 1024)
@@ -678,9 +716,4 @@ Put your configuration code here, except for variables that  should be set befor
 
 (setq custom-file "~/.spacemacs.d/custom.el")
 (load custom-file 'noerror)
-(defun dotspacemacs/emacs-custom-settings ()
-  "Emacs custom settings.
-This is an auto-generated function, do not write anything past this comment.
-This  is where Emacs will
-;; auto-generate custom variable definitions."
-  )
+;; (defun dotspacemacs/emacs-custom-settings ())
