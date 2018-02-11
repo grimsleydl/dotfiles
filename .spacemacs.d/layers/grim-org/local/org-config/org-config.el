@@ -170,7 +170,7 @@
                               ;; TICKET
                               ("w" "Work ticket with date" plain
                                (file+datetree "~/Documents/work-log.org")
-                               "%?"
+                               "**** ❢TODO %?"
                                )
                               ;; WORK JOURNAL WITH DATE
                               ;; ("jw" "Work journal entry with date" plain
