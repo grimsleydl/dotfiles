@@ -94,7 +94,7 @@ tags
 
 secrets/secret.zsh
 
-# personal whitelist
+# personal list
 !.zshrc
 !grim-zsh/
 !.spacemacs.d/config/*
@@ -103,3 +103,4 @@ secrets/secret.zsh
 !.tmux.conf.local
 !.bashrc##*
 !.config/wsltty/themes/*
+.bashrc
