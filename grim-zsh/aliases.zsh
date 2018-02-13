@@ -2,7 +2,7 @@ alias _='sudo'
 alias als='alias | grep -i --'
 
 alias dfh='df -h'
-alias Gi="| grep -i"
+alias -g Gi="| grep -i"
 
 alias ka9='killall -9'
 alias k9='kill -9'
@@ -33,7 +33,7 @@ alias yaf="yadm fetch"
 alias yap="yadm pull"
 alias yaP="yadm push"
 alias yas="yadm status"
-alias yaac="yadm commit -a -m"
+alias yaca="yadm commit -a -m"
 
 # zypper
 alias zyp='zypper'
