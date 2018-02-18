@@ -57,6 +57,8 @@
                                     ;; nginx
                                     ;; (python)
                                     ;; (ipython-notebook)
+                                    (ruby :variables
+                                          ruby-version-manager 'rbenv)
                                     shell-scripts
                                     elixir
                                     (elm :variables
@@ -585,15 +587,17 @@ Put your configuration code here, except for variables that  should be set befor
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(fixed-pitch ((t (:family "Fira Code")))))
-  ;; (setq python-shell-native-complete nil)
-  ;; (setq jedi:server-command
-  ;;       `("python"
-  ;;         ,(concat (file-name-directory
-  ;;                   (buffer-file-name
-  ;;                    (car
-  ;;                     (find-definition-noselect 'jedi:setup nil))))
-  ;;                  "jediepcserver.py")))
-  ;; (add-hook 'python-mode-hook 'jedi:setup)
+
+  (add-hook 'ruby-mode-hook
+            (lambda () (hs-minor-mode)))
+
+  (eval-after-load "hideshow"
+    '(add-to-list 'hs-special-modes-alist
+                  `(ruby-mode
+                    ,(rx (or "def" "class" "module" "do" "{" "[")) ; Block start
+                    ,(rx (or "}" "]" "end"))                       ; Block end
+                    ,(rx (or "#" "=begin"))                        ; Comment start
+                    ruby-forward-sexp nil)))
 
   (use-package evil-embrace
     :config
