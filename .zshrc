@@ -45,6 +45,7 @@ zplugin snippet "OMZ::plugins/ubuntu/ubuntu.plugin.zsh"
 zplugin snippet "OMZ::plugins/suse/suse.plugin.zsh"
 zplugin snippet "OMZ::plugins/yum/yum.plugin.zsh"
 
+zplugin load "cswl/zsh-rbenv"
 
 #############
 # ZSH-USERS #
@@ -176,3 +177,4 @@ AUTOSUGGESTION_HIGHLIGHT_COLOR="fg=8"
 # autoload -Uz compinit
 # compinit
 # End of lines added by compinstall
+
