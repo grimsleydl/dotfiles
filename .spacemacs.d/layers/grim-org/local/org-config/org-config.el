@@ -69,6 +69,8 @@
  org-directory "~/Dropbox/org"
  org-default-notes-file (concat org-directory "/inbox.org")
  org-journal-dir "~/Dropbox/org/journal/")
+ org-brain-path "~/Dropbox/org/personal/brain"
+
 (setq org-todo-keywords '((sequence "❢TODO(t!)" "★NEXT(n!)" "⚡ACTIVE(a!)" "|" "✔DONE(d!)" "✘CANCELED(c!)")
                           (sequence "⌚HOLD(h@/!)" "⧖WAITING(w@/!)" "➤DELEGATED(l@/!)" "☎FOLLOWUP(f!)" "SOMEDAY(s!)" "|" "✘CANCELED(c!)")
                           (sequence "PROJ(p)" "|" "✔DONE(d!)" "✘CANCELED(c!)")))
@@ -172,6 +174,8 @@
                                (file+datetree "~/Documents/work-log.org")
                                "**** ❢TODO %?"
                                )
+                              ("b" "Brain" plain (function org-brain-goto-end)
+                               "* %i%?" :empty-lines 1)
                               ;; WORK JOURNAL WITH DATE
                               ;; ("jw" "Work journal entry with date" plain
                               ;;  (file+datetree (concat org-directory "/personal/work.org") "Journal")
