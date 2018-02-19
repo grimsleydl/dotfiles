@@ -68,8 +68,8 @@
  org-odt-preferred-output-format "doc"
  org-directory "~/Dropbox/org"
  org-default-notes-file (concat org-directory "/inbox.org")
- org-journal-dir "~/Dropbox/org/journal/")
- org-brain-path "~/Dropbox/org/personal/brain"
+ org-journal-dir "~/Dropbox/org/journal/"
+ org-brain-path "~/Dropbox/org/personal/brain")
 
 (setq org-todo-keywords '((sequence "❢TODO(t!)" "★NEXT(n!)" "⚡ACTIVE(a!)" "|" "✔DONE(d!)" "✘CANCELED(c!)")
                           (sequence "⌚HOLD(h@/!)" "⧖WAITING(w@/!)" "➤DELEGATED(l@/!)" "☎FOLLOWUP(f!)" "SOMEDAY(s!)" "|" "✘CANCELED(c!)")
