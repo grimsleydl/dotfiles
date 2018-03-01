@@ -15,6 +15,7 @@
 
 ;; (add-hook 'window-configuration-change-hook 'nanny/org-realign-tag-column)
 (add-hook 'org-capture-mode-hook 'evil-insert-state)
+(add-hook 'org-brain-new-entry-hook 'mrb/insert-created-timestamp)
 (add-hook 'org-agenda-mode-hook
           (lambda ()
             (vim-empty-lines-mode -1)
@@ -64,12 +65,16 @@
  org-footnote-section nil
 
  org-id-link-to-org-use-id t
+ org-id-track-globally t
 
  org-odt-preferred-output-format "doc"
  org-directory "~/Dropbox/org"
  org-default-notes-file (concat org-directory "/inbox.org")
- org-journal-dir "~/Dropbox/org/journal/"
- org-brain-path "~/Dropbox/org/personal/brain")
+ org-journal-dir "~/Dropbox/org/journal/")
+
+(setq org-brain-path "~/Dropbox/org/personal/brain")
+(setq org-brain-visualize-default-choices 'all)
+;; org-brain-title-max-length 20
 
 (setq org-todo-keywords '((sequence "❢TODO(t!)" "★NEXT(n!)" "⚡ACTIVE(a!)" "|" "✔DONE(d!)" "✘CANCELED(c!)")
                           (sequence "⌚HOLD(h@/!)" "⧖WAITING(w@/!)" "➤DELEGATED(l@/!)" "☎FOLLOWUP(f!)" "SOMEDAY(s!)" "|" "✘CANCELED(c!)")
@@ -172,7 +177,43 @@
                               ;; TICKET
                               ("w" "Work ticket with date" plain
                                (file+datetree "~/Documents/work-log.org")
-                               "**** ❢TODO %?"
+                               "**** ❢TODO [%^{ticket}] %^{subject}
+:PROPERTIES:
+:CREATED: %U
+:TICKET-NUMBER: %\\1
+:END:
+
+
+#+BEGIN_SRC
+
+**********CHECK DETAILS**********
+Read the AMGs, DMGs, Check permissions of the Requester
+Thoroughly Read the ticket
+List ALL Relevant Devices
+
+
+
+
+
+**********DETERMINE THE CURRENT STATE**********
+        (Please specify in your own words) 
+
+
+
+
+**********LIST STEPS TO REPRODUCE or STEPS TO COMPLETE THE REQUEST**********
+
+
+
+
+**********WHAT IS THE DESIRED STATE**********
+       (Please specify in your own words) 
+
+#+END_SRC
+Response:
+#+BEGIN_SRC
+
+#+END_SRC"
                                )
                               ("b" "Brain" plain (function org-brain-goto-end)
                                "* %i%?" :empty-lines 1)
