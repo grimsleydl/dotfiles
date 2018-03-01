@@ -19,6 +19,8 @@
          (hydra-org-template/body)
         (self-insert-command 1)))))
 
+;; (define-key org-brain-visualize-mode-map (kbd "L") #'org-brain-cliplink-resource)
+
 (spacemacs/set-leader-keys-for-major-mode 'org-mode
   "l" 'org-show-current-heading-tidily
   "J" 'counsel-org-goto

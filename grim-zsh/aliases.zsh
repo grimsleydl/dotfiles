@@ -1,5 +1,8 @@
-alias _='sudo'
 alias als='alias | grep -i --'
+
+alias -- -='cd -'
+
+alias _='sudo'
 
 alias dfh='df -h'
 alias -g Gi="| grep -i"
