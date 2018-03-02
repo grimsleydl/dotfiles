@@ -6,6 +6,7 @@ export ALSA_CONFIG_PATH=/etc/alsa-pulse.conf
 # export PROMPT_GEOMETRY_COLORIZE_ROOT="true"
 export PROMPT_GEOMETRY_EXEC_TIME="true"
 export GEOMETRY_SYMBOL_RPROMPT="⊢"
+export GEOMETRY_COLOR_VIRTUALENV=green
 
 export FZF_DEFAULT_OPTS="--reverse --inline-info"
 export FZF_DEFAULT_COMMAND="fd --type f --no-ignore --hidden --follow --exclude .git"

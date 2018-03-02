@@ -5,9 +5,9 @@ source "$HOME/.zplugin/bin/zplugin.zsh"
 ##########
 # PROMPT #
 ##########
+export GEOMETRY_PROMPT_PLUGINS=(virtualenv exec_time jobs git)
 zplugin load "geometry-zsh/geometry"
 zplugin load "desyncr/geometry-dir-info-prompt"
-
 
 zplugin load "RobSis/zsh-completion-generator"
 
@@ -21,7 +21,7 @@ zplugin snippet "PZT::modules/directory/init.zsh"
 # zplugin snippet "PZT::modules/completion/init.zsh"
 zplugin snippet "PZT::modules/fasd/init.zsh"
 zplugin snippet "PZT::modules/editor/init.zsh"
-zplugin ice svn; zplugin snippet PZT::modules/python
+# zplugin ice svn; zplugin snippet PZT::modules/python
 # zplugin snippet "PZT::modules/python/init.zsh"
 
 #############
@@ -179,4 +179,6 @@ AUTOSUGGESTION_HIGHLIGHT_COLOR="fg=8"
 # autoload -Uz compinit
 # compinit
 # End of lines added by compinstall
-
+eval "$(pyenv init -)"
+pyenv virtualenvwrapper_lazy
+# source .pyenv/shims/virtualenvwrapper.sh
