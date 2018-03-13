@@ -11,6 +11,8 @@ URxvt.boldItalicFont: xft:Fira Code:bold:italic:pixelsize=13:antialias=true:hint
 
 URxvt.letterSpace: -1
 
+URxvt*visualBell:  false
+
 !! Extensions
 URxvt.perl-ext-common:  default,url-select,keyboard-select,font-size
 

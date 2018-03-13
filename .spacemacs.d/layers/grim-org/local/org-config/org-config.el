@@ -185,7 +185,6 @@
 
 
 #+BEGIN_SRC
-
 **********CHECK DETAILS**********
 Read the AMGs, DMGs, Check permissions of the Requester
 Thoroughly Read the ticket
@@ -208,9 +207,10 @@ List ALL Relevant Devices
 
 **********WHAT IS THE DESIRED STATE**********
        (Please specify in your own words) 
-
 #+END_SRC
+
 Response:
+
 #+BEGIN_SRC
 
 #+END_SRC"
