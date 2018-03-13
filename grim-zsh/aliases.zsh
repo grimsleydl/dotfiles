@@ -24,7 +24,6 @@ fi
 
 alias psa="ps aux"
 alias psc='ps xawf -eo pid,user,cgroup,args'
-alias psg="ps aux | grep"
 alias rival='sudo rival'
 alias scu='systemctl --user'
 alias xx='patool extract'     #size,show type,human readable
