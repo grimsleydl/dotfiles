@@ -29,9 +29,9 @@
                                    vim-empty-lines))
 (defvar dotspacemacs/layers/extra '( ;; dash
                                     ;; deft
-                                    (elfeed :variables
-                                            rmh-elfeed-org-files
-                                            (list "~/.elfeed/private/elfeed1.org"))
+                                    ;; (elfeed :variables
+                                    ;;         rmh-elfeed-org-files
+                                    ;;         (list "~/.elfeed/private/elfeed1.org"))
                                     ;; emoji
                                     ;; eyebrowse
                                     ibuffer
@@ -148,6 +148,7 @@ This function should only modify configuration layer settings."
                                       ;; org-recipes
                                       ;; transclusion-minor-mode
                                       ;; org-quick-peek
+                                      org-web-tools
                                       ;; palimpsest
                                       paper-theme
                                       quickrun
