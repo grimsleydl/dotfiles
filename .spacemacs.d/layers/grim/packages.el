@@ -13,33 +13,38 @@
 ;; List of all packages to install and/or initialize. Built-in packages
 ;; which require an initialization must be listed explicitly in the list.
 (setq grim-packages
-     '(
-;;       draft-mode
-;;       fancy-narrow
-;;       focus
-;;       olivetti
-;;       org-bookmark-heading
-;;       org-journal
-;;       writegood-mode
-;;       ;; vimish-fold
-;;       ;; evil-vimish-fold
-       dired-collapse
-       dired-filter
-       diredfl
-       ;; dired-k
-       dired-narrow
-       dired-quick-sort
-       ;; dired-rainbow
-       dired-subtree
-       drag-stuff
-       ;; dired+
-       git-auto-commit-mode
-       sx
-       zoom
-      ))
+      '(
+        ;;       draft-mode
+        ;;       fancy-narrow
+        ;;       focus
+        ;;       olivetti
+        ;;       org-bookmark-heading
+        ;;       org-journal
+        ;;       writegood-mode
+        ;;       ;; vimish-fold
+        ;;       ;; evil-vimish-fold
+        dired-collapse
+        dired-filter
+        diredfl
+        ;; dired-k
+        dired-narrow
+        dired-quick-sort
+        ;; dired-rainbow
+        dired-subtree
+        drag-stuff
+        ;; dired+
+        git-auto-commit-mode
+        sx
+        zoom
+        ))
 (defun grim/init-zoom ()
   "Initialize zoom"
-  (use-package zoom))
+  (use-package zoom
+    :init
+    (progn
+      (spacemacs/set-leader-keys "tg" 'zoom-mode))
+    :config
+    (setq zoom-size '(0.618 . 0.618))))
 
 (defun grim/init-sx ()
   "Initialize sx"
@@ -54,8 +59,8 @@
      ;;           ("u" . sx-tab-unanswered-my-tags)
      ;;           ("a" . sx-ask)
      ;;           ("s" . sx-search)
-               ))
-    )
+     ))
+  )
 
 (defun grim/init-dired-filter ()
   "Initialize dired-filter"
@@ -82,11 +87,11 @@
 (defun grim/init-dired-collapse ()
   "Initialize dired-collapse"
   (use-package dired-collapse
-  :ensure t
-  :after dired
-  :config
-  (add-hook 'dired-mode-hook 'dired-collapse-mode)
-  ))
+    :ensure t
+    :after dired
+    :config
+    (add-hook 'dired-mode-hook 'dired-collapse-mode)
+    ))
 
 (defun grim/init-dired-rainbow ()
   "Initialize dired-rainbow"
