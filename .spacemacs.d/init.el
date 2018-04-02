@@ -57,6 +57,7 @@
                                     ;; nginx
                                     ;; (python)
                                     ;; (ipython-notebook)
+                                    (python)
                                     (ruby :variables
                                           ruby-version-manager 'rbenv)
                                     shell-scripts
@@ -616,6 +617,7 @@ This function is called at the very end of Spacemacs startup, after
 layer configuration.
 Put your configuration code here, except for variables that  should be set before packages are loaded."
   (require 'grim-hydras)
+  (temp-buffer-resize-mode t)
   (setq vc-follow-symlinks t)
   (setq nord-comment-brightness 15)
   (setq nord-region-highlight "snowstorm")
@@ -623,6 +625,7 @@ Put your configuration code here, except for variables that  should be set befor
   (setq hydra-look-for-remap t)
   (global-hungry-delete-mode)
   (global-prettify-symbols-mode 1)
+
   (setq-default line-spacing 0)
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
