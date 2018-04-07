@@ -1,0 +1,11 @@
+[Desktop Action copy-file-list]
+Exec=ls "%U" | xclip -selection clipboard
+Name=Copy File List
+Icon=edit-copy
+
+[Desktop Entry]
+Actions=copy-file-list
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=inode/directory
+Type=Service
+X-KDE-Priority=TopLevel
