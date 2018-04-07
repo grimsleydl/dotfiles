@@ -49,3 +49,4 @@ alias zinfo='zypper info'
 # get keyboard devnode
 alias getkeyboard="grep -E  'Handlers|EV=' /proc/bus/input/devices | grep -B1 'EV=120013' | grep -Eo 'event[0-9]+'"
 
+alias weather="bash -c \"curl wttr.in/?0\""
