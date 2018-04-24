@@ -1,3 +1,7 @@
+pingtil() {
+    until ping -c1 "$1" &>/dev/null; do :; done
+}
+
 psg() {
     ps aux | { head -1; grep "$1"; }
 }

@@ -19,7 +19,7 @@ zplugin snippet "PZT::modules/history/init.zsh"
 zplugin snippet "PZT::modules/directory/init.zsh"
 # zplugin ice svn; zplugin snippet "PZT::modules/utility"
 # zplugin snippet "PZT::modules/completion/init.zsh"
-zplugin snippet "PZT::modules/fasd/init.zsh"
+# zplugin snippet "PZT::modules/fasd/init.zsh"
 zplugin snippet "PZT::modules/editor/init.zsh"
 # zplugin ice svn; zplugin snippet PZT::modules/python
 # zplugin snippet "PZT::modules/python/init.zsh"
