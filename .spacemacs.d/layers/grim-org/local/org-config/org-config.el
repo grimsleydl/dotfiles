@@ -186,30 +186,20 @@
 
 #+BEGIN_SRC
 **********CHECK DETAILS**********
-Read the AMGs, DMGs, Check permissions of the Requester
-Thoroughly Read the ticket
-List ALL Relevant Devices
+1. I have Read the AMGs, DMGs, and IRs.
+2. I have verified permissions of the requester.
+3. I have thoroughly read the ticket.
+4. List all devices relevant to the change:
+[Enter Relevant Devices]
 
+**********DOCUMENT THE INITIAL STATE OF ENVIRONMENT AND/OR LIST STEPS TO REPRODUCE ISSUE**********
+[Enter Text Here]
 
-
-
-
-**********DETERMINE THE CURRENT STATE**********
-        (Please specify in your own words) 
-
-
-
-
-**********LIST STEPS TO REPRODUCE or STEPS TO COMPLETE THE REQUEST**********
-
-
-
-
-**********WHAT IS THE DESIRED STATE**********
-       (Please specify in your own words) 
+**********DOCUMENT THE DESIRED STATE AND HOW YOU VERIFIED THE CHANGE WAS SUCCESSFUL**********
+[Enter Text Here]
 #+END_SRC
 
-Response:
+***** Response:
 
 #+BEGIN_SRC
 

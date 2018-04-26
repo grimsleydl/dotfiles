@@ -32,6 +32,7 @@
   '(
     interleave
     (org-config :location local)
+    org-noter
     org-wc
     nanowrimo
     (org-bullets :location (recipe :fetcher github :repo "Kaligule/org-bullets"))
@@ -46,6 +47,11 @@
 (defun grim-org/init-org-bullets ()
   (use-package org-bullets
     :defer t))
+
+(defun grim-org/init-org-noter ()
+  (use-package org-noter
+    :defer t))
+
 (defun grim-org/init-org-wc ()
   (use-package org-wc
     :defer t))
