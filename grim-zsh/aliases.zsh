@@ -5,8 +5,12 @@ alias -- -='cd -'
 alias _='sudo'
 
 alias dfh='df -h'
+alias dc-start="sudo docker-compose start"
+alias dc-stop="sudo docker-compose stop"
+
 alias -g Gi="| grep -i"
 
+alias imount="mount | grep -E --color=never  '^(/|[[:alnum:]\.-]*:/)'"
 alias ka9='killall -9'
 alias k9='kill -9'
 alias killit='kill -9 %%'
