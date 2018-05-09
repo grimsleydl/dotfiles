@@ -61,6 +61,7 @@
                                     (ruby :variables
                                           ruby-version-manager 'rbenv)
                                     shell-scripts
+                                    elfeed
                                     elixir
                                     (elm :variables
                                          elm-sort-imports-on-save t)
