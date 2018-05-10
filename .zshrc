@@ -180,6 +180,3 @@ AUTOSUGGESTION_HIGHLIGHT_COLOR="fg=8"
 # autoload -Uz compinit
 # compinit
 # End of lines added by compinstall
-eval "$(pyenv init -)"
-pyenv virtualenvwrapper_lazy
-# source .pyenv/shims/virtualenvwrapper.sh

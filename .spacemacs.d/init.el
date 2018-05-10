@@ -167,7 +167,8 @@ This function should only modify configuration layer settings."
                                       unfill
                                       ;; vimish-fold
                                       wc-mode
-                                      writegood-mode)
+                                      writegood-mode
+                                      zoom)
 
    dotspacemacs-frozen-packages '()
 
