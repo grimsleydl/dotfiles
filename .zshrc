@@ -7,7 +7,7 @@ source "$HOME/.zplugin/bin/zplugin.zsh"
 ##########
 export GEOMETRY_PROMPT_PLUGINS=(virtualenv exec_time jobs git)
 zplugin load "geometry-zsh/geometry"
-zplugin load "desyncr/geometry-dir-info-prompt"
+# zplugin load "desyncr/geometry-dir-info-prompt"
 
 zplugin load "RobSis/zsh-completion-generator"
 

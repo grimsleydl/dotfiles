@@ -40,6 +40,7 @@
   "op" 'grim/paste-newline-below
   "oP" 'grim/paste-newline-above
   "ou" 'hydra-undo-tree/body
+  "ot" 'hydra-timestamp/body
   "oy" 'grim/my-copy-simple
   "fF" 'counsel-fzf
   "d SPC" 'counsel-dired-jump
