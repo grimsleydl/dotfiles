@@ -11,6 +11,7 @@ alias dc-stop="sudo docker-compose stop"
 alias -g Gi="| grep -i"
 
 alias imount="mount | grep -E --color=never  '^(/|[[:alnum:]\.-]*:/)'"
+alias imt="imount | column -t"
 alias ka9='killall -9'
 alias k9='kill -9'
 alias killit='kill -9 %%'
