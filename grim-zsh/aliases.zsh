@@ -1,3 +1,5 @@
+unalias fd
+
 alias als='alias | grep -i --'
 
 alias -- -='cd -'

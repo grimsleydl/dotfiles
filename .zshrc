@@ -9,7 +9,7 @@ export GEOMETRY_PROMPT_PLUGINS=(virtualenv exec_time jobs git)
 zplugin load "geometry-zsh/geometry"
 # zplugin load "desyncr/geometry-dir-info-prompt"
 
-zplugin load "RobSis/zsh-completion-generator"
+# zplugin load "RobSis/zsh-completion-generator"
 
 ##########
 # PREZTO #
@@ -63,7 +63,7 @@ zplugin load "zsh-users/zaw"
 ###########
 # ZDHARMA #
 ###########
-zplugin ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'; zplugin light zdharma/zplugin-crasis
+# zplugin ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'; zplugin light zdharma/zplugin-crasis
 zplugin light zdharma/zui
 zplugin load "zdharma/history-search-multi-word"
 zstyle ":plugin:history-search-multi-word" clear-on-cancel "yes"
@@ -131,35 +131,31 @@ zplugin ice as"command" pick"fpp"; zplugin light "facebook/PathPicker"
 
 zplugin load "GuilleDF/zsh-ubuntualiases"
 zplugin ice pick"dotfiles/zsh/upr.zsh"; zplugin load "io-monad/dotfiles"
-zpl ice pick"manydots-magic" wait'3'; zpl load "knu/zsh-manydots-magic"
+zpl ice pick"manydots-magic" wait'0'; zpl load "knu/zsh-manydots-magic"
 
 # zplugin light "djui/alias-tips"
 zplugin light "MichaelAquilina/zsh-you-should-use"
 
-for zlocal in ~/grim-zsh/**/*.zsh
-do
-    zplugin snippet -f "$zlocal"
-done
+zplugin ice atinit'local zlocal; for zlocal in ~/grim-zsh/**/*.zsh; do source "$zlocal"; done'; zpl light ~/grim-zsh
+# zplugin snippet -f "$zlocal"
+# zpl ice atload"echo abc"; zpl light ~/.local
+# zpl ice atinit'local i; for i in grml.sh setupLocal.sh; do source $i; done'; zpl light ~/.local
 
 function zplugin_end(){
-    autoload -Uz compinit && compinit -i
+    autoload -z compinit && compinit -i
     zplugin cdreplay -q # -q is for quiet
     # autoload -Uz _zplugin
     # (( ${+_comps} )) && _comps[zplugin]=_zplugin
-    zcompile ${ZDOTDIR:-$HOME}/.zplugin/bin/zplugin.zsh
+    # zcompile ${ZDOTDIR:-$HOME}/.zplugin/bin/zplugin.zsh
 }
 
 zplugin load "zdharma/fast-syntax-highlighting"
 #if whence -f zplugin; then zplugin_end; else zplug_end; fi
 zplugin_end
 
-if [ $(lsb_release -is) = "Ubuntu" ]; then
-   sudo mount -a
-fi
-
-if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
-    tmux attach-session -t "$USER" || tmux new-session -s "$USER"
-fi
+# if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
+#     tmux attach-session -t "$USER" || tmux new-session -s "$USER"
+# fi
 AUTOSUGGESTION_HIGHLIGHT_COLOR="fg=8"
 
 # The following lines were added by compinstall
@@ -181,5 +177,4 @@ AUTOSUGGESTION_HIGHLIGHT_COLOR="fg=8"
 # compinit
 # End of lines added by compinstall
 eval "$(pyenv init -)"
-pyenv virtualenvwrapper_lazy
 # source .pyenv/shims/virtualenvwrapper.sh

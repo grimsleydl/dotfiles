@@ -176,7 +176,7 @@
                                )
                               ;; TICKET
                               ("w" "Work ticket with date" plain
-                               (file+datetree "~/Documents/work-log.org")
+                               (file+datetree "~/Dropbox/org/work/work-log.org.gpg")
                                "**** ❢TODO [%^{ticket}] %^{subject}
 :PROPERTIES:
 :CREATED: %U

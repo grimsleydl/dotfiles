@@ -1,3 +1,17 @@
+pipsi-upgrade() {
+    pipsi upgrade pipsi
+    for package in $(pipsi list | sed -ne 's/^.*Package "\(.*\)".*/\1/p' | grep -v pipsi); do
+        echo pipsi upgrade "$package"
+        pipsi upgrade "$package"
+    done
+    if [[ "$1" == "--all" ]]; then
+        for venv in $PIPSI_HOME/*; do
+            echo Upgrading pip in $venv
+            . $venv/bin/activate && pip install --upgrade pip && deactivate
+        done
+    fi
+}
+
 pingtil() {
     until ping -c1 "$1" &>/dev/null; do :; done
 }

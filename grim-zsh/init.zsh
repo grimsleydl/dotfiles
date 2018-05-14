@@ -3,8 +3,6 @@ export GREP_COLOR='1;33'
 
 # ENHANCD_COMMAND=ecd; export ENHANCD_COMMAND
 
-unalias fd
-
 setopt no_hist_verify
 setopt menu_complete
 setopt HIST_REDUCE_BLANKS
