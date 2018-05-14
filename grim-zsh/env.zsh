@@ -1,4 +1,5 @@
 source ~/.env
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>|'
 # OpenSUSE stuff
 export MAN_POSIXLY_CORRECT=1
 export ALSA_CONFIG_PATH=/etc/alsa-pulse.conf
