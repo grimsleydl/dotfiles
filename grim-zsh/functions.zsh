@@ -9,6 +9,8 @@ pipsi-upgrade() {
             echo Upgrading pip in $venv
             . $venv/bin/activate && pip install --upgrade pip && deactivate
         done
+    fi
+}
 
 fkill() {
     local pid
