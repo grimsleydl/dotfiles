@@ -95,8 +95,9 @@ zplugin ice from"gh-r" as"command"; zplugin light junegunn/fzf-bin
 # zplugin ice from"gh-r" bpick"*linux*amd64*" as"command"; zplugin load "tmrts/boilr"
 # zplugin ice from"gh-r" bpick"*linux*" as"command" mv"docker* -> docker-compose"; zplugin load docker/compose
 zplugin light "webyneter/docker-aliases"
-zplugin light "asuran/zsh-docker-machine"
+# zplugin light "asuran/zsh-docker-machine"
 zplugin light "rawkode/zsh-docker-run"
+zplugin light "cloudstek/zsh-plugin-appup"
 
 # zplugin ice mv"autocompletion.zsh -> _tldr"; zplugin load "tldr-pages/tldr-node-client"
 zplugin ice as"command" pick"tldr"; zplugin light "pepa65/tldr-bash-client"

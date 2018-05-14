@@ -10,7 +10,7 @@ alias dfh='df -h'
 alias dc-start="sudo docker-compose start"
 alias dc-stop="sudo docker-compose stop"
 
-alias eg='eg --squeeze --pager-cmd="cat"'
+alias eg='eg --squeeze'
 
 alias -g Gi="| grep -i"
 
