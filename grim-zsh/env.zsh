@@ -22,6 +22,7 @@ export ZSH_AUTOSUGGEST_USE_ASYNC="t"
 export PURE_GIT_PULL=0
 
 export SSH_KEY_PATH="~/.ssh/id_rsa"
+export SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 

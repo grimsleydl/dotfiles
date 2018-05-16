@@ -9,7 +9,7 @@ source "$HOME/.zplugin/bin/zplugin.zsh"
 zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
 # prompt_newline='%666v'
 # PROMPT=" $PROMPT"
-
+# PURE_PROMPT_SYMBOL='%f%F{red}#%f %F{magenta}❯'
 # zplugin load "RobSis/zsh-completion-generator"
 
 ##########
