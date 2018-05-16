@@ -1,6 +1,6 @@
 bindkey '^_' undo
 # bindkey '^t' _marker_get
-bindkey ';x' zaw
+# bindkey ';x' zaw
 bindkey ';;' _marker_get
 bindkey ";a" _fzf_marker_main_widget
 bindkey '^K' kill-line

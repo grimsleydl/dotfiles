@@ -5,9 +5,10 @@ source "$HOME/.zplugin/bin/zplugin.zsh"
 ##########
 # PROMPT #
 ##########
-export GEOMETRY_PROMPT_PLUGINS=(virtualenv exec_time jobs git)
-zplugin load "geometry-zsh/geometry"
-# zplugin load "desyncr/geometry-dir-info-prompt"
+# Load the pure theme, with zsh-async that's bundled with it
+zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
+# prompt_newline='%666v'
+# PROMPT=" $PROMPT"
 
 # zplugin load "RobSis/zsh-completion-generator"
 
@@ -57,7 +58,7 @@ zplugin light "zsh-users/zsh-completions"
 # zplugin ice wait'1' atload'_zsh_autosuggest_start';
 zplugin load "zsh-users/zsh-autosuggestions"
 zplugin light "zsh-users/zsh-history-substring-search"
-zplugin load "zsh-users/zaw"
+# zplugin load "zsh-users/zaw"
 # zplugin load "ajsalminen/zaw-src-apt"
 
 ###########
@@ -66,7 +67,7 @@ zplugin load "zsh-users/zaw"
 # zplugin ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'; zplugin light zdharma/zplugin-crasis
 zplugin light zdharma/zui
 zplugin load "zdharma/history-search-multi-word"
-zstyle ":plugin:history-search-multi-word" clear-on-cancel "yes"
+# zstyle ":plugin:history-search-multi-word" clear-on-cancel "yes"
 
 zplugin load "psprint/zsh-editing-workbench"
 zplugin load "psprint/zsh-navigation-tools"
@@ -178,4 +179,3 @@ AUTOSUGGESTION_HIGHLIGHT_COLOR="fg=8"
 # compinit
 # End of lines added by compinstall
 eval "$(pyenv init -)"
-# source .pyenv/shims/virtualenvwrapper.sh

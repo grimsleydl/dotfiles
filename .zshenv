@@ -2,7 +2,6 @@ export EDITOR="emacsclient"
 export ALTERNATIVE_EDITOR="vim"
 export BROWSER="vivaldi"
 export TERMINAL="urxvt-256color"
-eval "$(pyenv init -)"
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
