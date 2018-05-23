@@ -647,9 +647,9 @@ Put your configuration code here, except for variables that  should be set befor
                     ,(rx (or "#" "=begin"))                        ; Comment start
                     ruby-forward-sexp nil)))
 
-  (use-package evil-embrace
-    :config
-    (evil-embrace-enable-evil-surround-integration))
+  ;; (use-package evil-embrace
+  ;;   :config
+  ;;   (evil-embrace-enable-evil-surround-integration))
   ;; (spacemacs/load-theme 'gruvbox)
   (setq password-cache-expiry nil)
   (setq tramp-use-ssh-controlmaster-options nil)
