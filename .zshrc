@@ -179,3 +179,4 @@ AUTOSUGGESTION_HIGHLIGHT_COLOR="fg=8"
 # compinit
 # End of lines added by compinstall
 eval "$(pyenv init -)"
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"

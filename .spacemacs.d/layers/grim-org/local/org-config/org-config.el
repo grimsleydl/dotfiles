@@ -176,15 +176,15 @@
                                )
                               ;; TICKET
                               ("w" "Work ticket with date" plain
-                               (file+olp+datetree "~/Dropbox/org/work/work.org.gpg" "Tickets")
-                               "**** ❢TODO [%^{ticket}] %^{subject}    :ignore:
+                               (file+olp+datetree "~/work/work.org.gpg" "Tickets")
+                               "***** ❢TODO [%^{ticket}] %^{subject}    :ignore:
 :PROPERTIES:
 :CREATED: %U
 :TICKET-NUMBER: %\\1
 :END:
 
 
-#+BEGIN_SRC
+#+BEGIN_SRC text
 **********CHECK DETAILS**********
 1. I have Read the AMGs, DMGs, and IRs.
 2. I have verified permissions of the requester.
@@ -199,7 +199,7 @@
 
 ***** Response:    :ignore:
 
-#+BEGIN_SRC
+#+BEGIN_SRC text
 
 #+END_SRC"
                                )

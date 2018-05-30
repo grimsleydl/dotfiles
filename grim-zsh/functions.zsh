@@ -1,3 +1,8 @@
+reboot-checks() {
+    mkdir -p "$HOME/work/$1"
+    cd "$HOME/work/$1"
+    reboot-checks "$1"
+}
 pipsi-upgrade() {
     pipsi upgrade pipsi
     for package in $(pipsi list | sed -ne 's/^.*Package "\(.*\)".*/\1/p' | grep -v pipsi); do
