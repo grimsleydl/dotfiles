@@ -3,7 +3,8 @@
 (require 'org-bullets)
 (require 'ox-bibtex)
 (require 'ox-extra)
-
+;; (require 'org-crypt)
+;; (org-crypt-use-before-save-magic)
 (provide 'org-config)
 
 ;; (add-hook 'org-load-hook 'my-org-mode-hook)
@@ -197,7 +198,7 @@
 
 #+END_SRC
 
-***** Response:    :ignore:
+****** Response:    :ignore:
 
 #+BEGIN_SRC text
 
