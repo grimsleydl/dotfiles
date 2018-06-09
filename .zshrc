@@ -114,6 +114,8 @@ zplugin ice as"command" pick"bin/git-submodule-rewrite"; zplugin light "jeremyse
 zplugin ice as"command"; zplugin light "TheLocehiliosan/yadm"
 zplugin ice as"command"; zplugin light "skx/sysadmin-util"
 zplugin ice as"command" pick"bin/tat"; zplugin light "thoughtbot/dotfiles"
+zplugin ice as"command" pick"mullvad"; zplugin light "adihrustic/Mullvad-WireGuard-script"
+
 
 zplugin ice pick"shell/key-bindings.zsh"; zplugin light "junegunn/fzf"
 zplugin ice pick"shell/completion.zsh"; zplugin light "junegunn/fzf"
@@ -153,8 +155,8 @@ function zplugin_end(){
 
 zplugin load "zdharma/fast-syntax-highlighting"
 #if whence -f zplugin; then zplugin_end; else zplug_end; fi
+autoload zargs
 zplugin_end
-
 # if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
 #     tmux attach-session -t "$USER" || tmux new-session -s "$USER"
 # fi

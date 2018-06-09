@@ -618,6 +618,7 @@ This value is basically not sane.")
 This function is called at the very end of Spacemacs startup, after
 layer configuration.
 Put your configuration code here, except for variables that  should be set before packages are loaded."
+  (global-evil-matchit-mode 1)
   (require 'grim-hydras)
   (temp-buffer-resize-mode t)
   (setq vc-follow-symlinks t)
@@ -725,6 +726,8 @@ Put your configuration code here, except for variables that  should be set befor
   (setq coffee-tab-width 2)
   (setq show-paren-style 'parenthesis)
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
+  (add-to-list 'default-frame-alist '(height . 30))
+  (add-to-list 'default-frame-alist '(width . 100))
   (setq-default evil-escape-key-sequence "jk")
   ;; fix password escaping if it has the evil-escape-key-sequence in it
   (defun my-read-passwd (read-passwd &rest args)
