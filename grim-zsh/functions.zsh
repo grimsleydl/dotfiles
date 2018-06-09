@@ -1,3 +1,9 @@
+reboot-checks() {
+    mkdir -p "$HOME/work/$1"
+    # cd "$HOME/work/$1"
+    ~/bin/reboot-checks "$1"
+    mv ~/patchingscript.log "$HOME/work/$1/patchingscript-$(date -u +"%Y-%m-%dT%H:%M:%SZ").log"
+}
 pipsi-upgrade() {
     pipsi upgrade pipsi
     for package in $(pipsi list | sed -ne 's/^.*Package "\(.*\)".*/\1/p' | grep -v pipsi); do

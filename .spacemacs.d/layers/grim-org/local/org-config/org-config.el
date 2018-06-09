@@ -3,7 +3,8 @@
 (require 'org-bullets)
 (require 'ox-bibtex)
 (require 'ox-extra)
-
+;; (require 'org-crypt)
+;; (org-crypt-use-before-save-magic)
 (provide 'org-config)
 
 ;; (add-hook 'org-load-hook 'my-org-mode-hook)
@@ -176,32 +177,30 @@
                                )
                               ;; TICKET
                               ("w" "Work ticket with date" plain
-                               (file+datetree "~/Dropbox/org/work/work-log.org.gpg")
-                               "**** ❢TODO [%^{ticket}] %^{subject}
+                               (file+olp+datetree "~/work/work.org.gpg" "Tickets")
+                               "***** ❢TODO [%^{ticket}] %^{subject}    :ignore:
 :PROPERTIES:
 :CREATED: %U
 :TICKET-NUMBER: %\\1
 :END:
 
 
-#+BEGIN_SRC
+#+BEGIN_SRC text
 **********CHECK DETAILS**********
 1. I have Read the AMGs, DMGs, and IRs.
 2. I have verified permissions of the requester.
 3. I have thoroughly read the ticket.
 4. List all devices relevant to the change:
-[Enter Relevant Devices]
 
 **********DOCUMENT THE INITIAL STATE OF ENVIRONMENT AND/OR LIST STEPS TO REPRODUCE ISSUE**********
-[Enter Text Here]
 
 **********DOCUMENT THE DESIRED STATE AND HOW YOU VERIFIED THE CHANGE WAS SUCCESSFUL**********
-[Enter Text Here]
+
 #+END_SRC
 
-***** Response:
+****** Response:    :ignore:
 
-#+BEGIN_SRC
+#+BEGIN_SRC text
 
 #+END_SRC"
                                )
