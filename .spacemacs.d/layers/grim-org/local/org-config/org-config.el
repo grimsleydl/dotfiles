@@ -183,8 +183,6 @@
 :CREATED: %U
 :TICKET-NUMBER: %\\1
 :END:
-
-
 #+BEGIN_SRC text
 **********CHECK DETAILS**********
 1. I have Read the AMGs, DMGs, and IRs.
