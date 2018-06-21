@@ -61,6 +61,7 @@
                                     (ruby :variables
                                           ruby-version-manager 'rbenv)
                                     shell-scripts
+                                    csv
                                     elfeed
                                     elixir
                                     (elm :variables
