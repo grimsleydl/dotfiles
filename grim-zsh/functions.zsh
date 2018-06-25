@@ -2,6 +2,40 @@ supernova() {
     pew in supernova supernova "$@"
 }
 
+ro() {
+    ip ro | awk '
+{   i = 1; h = " ip"
+    hdr[h] = 1
+    col[h,NR] = $i
+    for(i=2;i<=NF;){
+        if($i=="linkdown"){extra[NR] = $i; i++; continue}
+        hdr[$i] = 1
+        col[$i,NR] = $(i+1)
+        i += 2
+    }
+}
+END{     #PROCINFO[sorted_in] = "@ind_str_asc"
+    n = asorti(hdr,x)
+    for(i=1;i<=n;i++){ h = x[i]; max[h] = length(h) }
+    for(j = 1;j<=NR;j++){
+        for(i=1;i<=n;i++){
+            h = x[i]
+            l = length(col[h,j])
+            if(l>max[h])max[h] = l
+        }
+    }
+    for(i=1;i<=n;i++){ h = x[i]; printf "%-*s ",max[h],h }
+    printf "\n"
+    for(j = 1;j<=NR;j++){
+        for(i=1;i<=n;i++){ h = x[i]; printf "%-*s ",max[h],col[h,j] }
+        printf "%s\n",extra[j]
+    }
+}'
+}
+
+pyenv-exec() {
+    $(pyenv shell "$1" && shift && pyenv exec "$@")
+}
 reboot-checks() {
     mkdir -p "$HOME/work/$1"
     # cd "$HOME/work/$1"
@@ -70,17 +104,17 @@ dot_progress() {
     printf '\n'
 }
 
-rmssay()
-{
-    length=${#1}
+ rmssay()
+ {
+     length=${#1}
 
-    printf "┌─"; for ((c=1; c<=$length; c++)); do printf "─"; done; printf "─┐\n"
-    printf "│ $1 │\n"
-    printf "└─"; for ((c=1; c<=$length; c++)); do printf "─"; done; printf "─┘\n"
-    printf "      \\ \n"
-    printf "       \\ \n"
-    printf "        \\ \n"
-    printf "          @@@@@@ @
+     printf "┌─"; for ((c=1; c<=$length; c++)); do printf "─"; done; printf "─┐\n"
+     printf "│ $1 │\n"
+     printf "└─"; for ((c=1; c<=$length; c++)); do printf "─"; done; printf "─┘\n"
+     printf "      \\ \n"
+     printf "       \\ \n"
+     printf "        \\ \n"
+     printf "          @@@@@@ @
     @@@@     @@
     @@@@ =   =  @@
     @@@ @ _   _   @@
@@ -97,4 +131,4 @@ rmssay()
     @ @  @              @  @
     @                    @
 "
-}
+ }
