@@ -18,8 +18,9 @@
                                    github
                                    nlinum
                                    (org :variables
+                                        org-enable-reveal-js-support t
                                         org-want-todo-bindings t)
-                                   pdf-tools
+                                   pdf
                                    (shell :variables
                                           shell-default-height 30
                                           shell-default-position 'bottom)
@@ -69,6 +70,7 @@
                                     windows-scripts
                                     yaml))
 (defvar dotspacemacs/layers/tools '(systemd
+                                    csv
                                     docker))
 (defvar dotspacemacs/layers/local '((grim :location local)
                                     (grim-org :location local)))
@@ -113,6 +115,7 @@ This function should only modify configuration layer settings."
                                       ;; amx
                                       ;; fancy-narrow
                                       ;; darkroom
+                                      cheat-sh
                                       docker-compose-mode
                                       dotenv-mode
                                       draft-mode
@@ -150,9 +153,13 @@ This function should only modify configuration layer settings."
                                       ;; org-recipes
                                       ;; transclusion-minor-mode
                                       ;; org-quick-peek
+                                      org-tree-slide
                                       org-web-tools
                                       ;; palimpsest
                                       paper-theme
+                                      prescient
+                                      ivy-prescient
+                                      company-prescient
                                       quickrun
                                       ;; rainbow-blocks
                                       ;; related

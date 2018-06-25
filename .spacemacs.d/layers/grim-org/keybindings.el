@@ -20,7 +20,10 @@
         (self-insert-command 1)))))
 
 ;; (define-key org-brain-visualize-mode-map (kbd "L") #'org-brain-cliplink-resource)
-
+(with-eval-after-load "org-tree-slide"
+  (define-key org-tree-slide-mode-map (kbd "<f9>") 'org-tree-slide-move-previous-tree)
+  (define-key org-tree-slide-mode-map (kbd "<f10>") 'org-tree-slide-move-next-tree)
+  )
 (spacemacs/set-leader-keys-for-major-mode 'org-mode
   "l" 'org-show-current-heading-tidily
   "J" 'counsel-org-goto

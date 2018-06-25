@@ -1,3 +1,7 @@
+supernova() {
+    pew in supernova supernova "$@"
+}
+
 reboot-checks() {
     mkdir -p "$HOME/work/$1"
     # cd "$HOME/work/$1"
