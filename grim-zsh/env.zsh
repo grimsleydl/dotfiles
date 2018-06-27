@@ -4,8 +4,6 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>|'
 export MAN_POSIXLY_CORRECT=1
 export ALSA_CONFIG_PATH=/etc/alsa-pulse.conf
 
-# export PROMPT_GEOMETRY_COLORIZE_SYMBOL="true"
-# export PROMPT_GEOMETRY_COLORIZE_ROOT="true"
 export PROMPT_GEOMETRY_EXEC_TIME="true"
 export GEOMETRY_SYMBOL_RPROMPT="⊢"
 export GEOMETRY_COLOR_VIRTUALENV=green
@@ -29,3 +27,6 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 export PATH=$PATH:$HOME/bin/handy
 
 export DOCKER_HOST=tcp://0.0.0.0:2375
+
+autoload -Uz zmv
+autoload -Uz zargs

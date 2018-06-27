@@ -1,10 +1,10 @@
 unalias fd
-
 alias als='alias | grep -i --'
 
 alias -- -='cd -'
 
 alias _='sudo'
+alias usudo='sudo -E env "PATH=$PATH"'
 
 alias dfh='df -h'
 alias dc-start="sudo docker-compose start"
