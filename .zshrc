@@ -49,7 +49,7 @@ zplugin snippet "OMZ::plugins/ubuntu/ubuntu.plugin.zsh"
 zplugin snippet "OMZ::plugins/suse/suse.plugin.zsh"
 zplugin snippet "OMZ::plugins/yum/yum.plugin.zsh"
 
-zplugin load "cswl/zsh-rbenv"
+# zplugin load "cswl/zsh-rbenv"
 
 #############
 # ZSH-USERS #
@@ -115,10 +115,12 @@ zplugin ice as"command"; zplugin light "TheLocehiliosan/yadm"
 zplugin ice as"command"; zplugin light "skx/sysadmin-util"
 zplugin ice as"command" pick"bin/tat"; zplugin light "thoughtbot/dotfiles"
 zplugin ice as"command" pick"mullvad"; zplugin light "adihrustic/Mullvad-WireGuard-script"
+# zplugin ice as"command" pick"crypt/crypt" pick"ytview/ytview"; zplugin light "alexanderepstein/Bash-Snippets"
+for snip in cloudup/cloudup crypt/crypt cryptocurrency/cryptocurrency currency/currency extras/Linux/maps geo/geo lyrics/lyrics meme/meme movies/tmdb movies/movies newton/newton pwned/pwned qrify/qrify short/short siteciphers/siteciphers stocks/stocks taste/taste transfer/transfer weather/weather ytview/ytview; do zplugin snippet --command "https://github.com/alexanderepstein/Bash-Snippets/blob/master/$snip"; done
+# zplugin ice as"program" atload'local f; for f in crypt/crypt cryptocurrency/cryptocurrency currency/currency extras/Linux/maps geo/geo lyrics/lyrics meme/meme movies/tmdb movies/movies newton/newton pwned/pwned qrify/qrify short/short siteciphers/siteciphers stocks/stocks taste/taste transfer/transfer weather/weather ytview/ytview; do source $f; done'; zplugin light "alexanderepstein/Bash-Snippets"
 
-
-zplugin ice pick"shell/key-bindings.zsh"; zplugin light "junegunn/fzf"
-zplugin ice pick"shell/completion.zsh"; zplugin light "junegunn/fzf"
+zplugin ice pick"shell/key-bindings.zsh" src"shell/completion.zsh"; zplugin light "junegunn/fzf"
+# zplugin ice pick"shell/completion.zsh"; zplugin light "junegunn/fzf"
 export FZF_COMPLETION_TRIGGER=',,'
 zplugin load "ytet5uy4/fzf-widgets"
 zplugin load "wfxr/forgit"

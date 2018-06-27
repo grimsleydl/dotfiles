@@ -1,3 +1,7 @@
+supernova() {
+    pew in supernova supernova "$@"
+}
+
 ro() {
     ip ro | awk '
 {   i = 1; h = " ip"

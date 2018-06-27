@@ -1,4 +1,6 @@
 unalias fd
+alias anigrate="pipenv run anigrate"
+
 alias als='alias | grep -i --'
 
 alias -- -='cd -'
