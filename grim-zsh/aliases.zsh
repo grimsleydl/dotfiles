@@ -1,5 +1,6 @@
 unalias fd
-alias anigrate="pipenv run anigrate"
+# alias anigrate="pipenv run anigrate"
+alias anigrate="pew in anigrate-MTFg9EvQ anigrate"
 
 alias als='alias | grep -i --'
 
