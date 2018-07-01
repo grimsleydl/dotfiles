@@ -175,6 +175,7 @@ This function should only modify configuration layer settings."
                                       unfill
                                       ;; vimish-fold
                                       wc-mode
+                                      weechat
                                       writegood-mode
                                       zoom)
 
