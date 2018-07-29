@@ -1,3 +1,15 @@
+curlt() {
+    curl_format='
+ time_namelookup:    %{time_namelookup}
+ time_connect:       %{time_connect}
+ time_appconnect:    %{time_appconnect}
+ time_pretransfer:   %{time_pretransfer}
+ time_redirect:      %{time_redirect}
+ time_starttransfer: %{time_starttransfer}
+ time_total:         %{time_total}'
+curl -w "$curl_format" -o /dev/null -s "$@"
+}
+
 supernova() {
     pew in supernova supernova "$@"
 }
@@ -37,7 +49,7 @@ pyenv-exec() {
     $(pyenv shell "$1" && shift && pyenv exec "$@")
 }
 reboot-checks() {
-    mkdir -p "$HOME/work/$1"
+    mkdir -p "$HOME/work/tickets/$1"
     # cd "$HOME/work/$1"
     ~/bin/reboot-checks "$1"
     mv ~/patchingscript.log "$HOME/work/$1/patchingscript-$(date -u +"%Y-%m-%dT%H:%M:%SZ").log"

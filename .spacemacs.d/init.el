@@ -48,8 +48,7 @@
                                     autohotkey
                                     ;; (haskell :variables
                                     ;;          haskell-enable-hindent-style "chris-done")
-                                    ;; (html :variables
-                                    ;;       scss-compile-at-save nil)
+                                    html
                                     javascript
                                     ;; (latex :variables
                                     ;;        latex-enable-folding t
@@ -106,17 +105,18 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layer-path '("~/.spacemacs.d/")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
-   dotspacemacs-configuration-layers (append dotspacemacs/layers/core
+   dotspacemacs-configuration-layers (nginx
+                                      append dotspacemacs/layers/core
                                              dotspacemacs/layers/extra
                                              dotspacemacs/layers/langs
                                              dotspacemacs/layers/tools
                                              dotspacemacs/layers/local)
 
-   dotspacemacs-additional-packages '(all-the-icons
-                                      ;; amx
+   dotspacemacs-additional-packages '(;; amx
                                       ;; fancy-narrow
                                       ;; darkroom
                                       cheat-sh
+                                      deadgrep
                                       docker-compose-mode
                                       dotenv-mode
                                       draft-mode
@@ -159,7 +159,7 @@ This function should only modify configuration layer settings."
                                       ;; palimpsest
                                       paper-theme
                                       prescient
-                                      ivy-prescient
+                                      ;; ivy-prescient
                                       company-prescient
                                       quickrun
                                       ;; rainbow-blocks

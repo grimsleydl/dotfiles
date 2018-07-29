@@ -1,6 +1,7 @@
 unalias fd
 # alias anigrate="pipenv run anigrate"
 alias anigrate="pew in anigrate-MTFg9EvQ anigrate"
+alias borg="sudo BORG_PASSCOMMAND='cat /root/.borg-passphrase' borg"
 
 alias als='alias | grep -i --'
 
@@ -9,7 +10,7 @@ alias -- -='cd -'
 alias _='sudo'
 alias usudo='sudo -E env "PATH=$PATH"'
 
-alias dfh='df -h'
+alias dfh='df -PTh'
 alias dc-start="sudo docker-compose start"
 alias dc-stop="sudo docker-compose stop"
 
