@@ -16,7 +16,6 @@
                                                evil-snipe-enable-alternate-f-and-t-behaviors t)
                                    git
                                    github
-                                   nlinum
                                    (org :variables
                                         org-enable-reveal-js-support t
                                         org-want-todo-bindings t)
@@ -35,7 +34,7 @@
                                     ;;         (list "~/.elfeed/private/elfeed1.org"))
                                     ;; emoji
                                     ;; eyebrowse
-                                    ibuffer
+                                    ;; ibuffer
                                     imenu-list
                                     ;; origami
                                     pandoc
@@ -141,7 +140,6 @@ This function should only modify configuration layer settings."
                                       magithub
                                       moe-theme
                                       nord-theme
-                                      ;; nlinum
                                       olivetti
                                       org-bookmark-heading
                                       ;; org-brain
