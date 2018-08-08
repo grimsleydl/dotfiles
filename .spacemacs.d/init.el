@@ -104,8 +104,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layer-path '("~/.spacemacs.d/")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
-   dotspacemacs-configuration-layers (nginx
-                                      append dotspacemacs/layers/core
+   dotspacemacs-configuration-layers (append dotspacemacs/layers/core
                                              dotspacemacs/layers/extra
                                              dotspacemacs/layers/langs
                                              dotspacemacs/layers/tools
