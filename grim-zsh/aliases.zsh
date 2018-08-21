@@ -1,6 +1,6 @@
 unalias fd
 # alias anigrate="pipenv run anigrate"
-alias anigrate="pew in anigrate-MTFg9EvQ anigrate"
+alias ccp="~/bin/Rax-CCP-0.2.1/rax-ccp & disown"
 alias borg="sudo BORG_PASSCOMMAND='cat /root/.borg-passphrase' borg"
 
 alias als='alias | grep -i --'

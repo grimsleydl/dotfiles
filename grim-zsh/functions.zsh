@@ -1,3 +1,26 @@
+sanic() {
+    echo "
+                 ▄▄▄▄▄
+        ▀▀▀██████▄▄▄   
+      ▄▄▄▄▄  █████████▄
+     ▀▀▀▀█████▌ ▀▐▄ ▀▐█
+   ▀▀█████▄▄ ▀██████▄██
+   ▀▄▄▄▄▄  ▀▀█▄▀█════█▀
+        ▀▀▀▄  ▀▀███ ▀       ▄▄
+     ▄███▀▀██▄████████▄ ▄▀▀▀▀▀▀█▌
+   ██▀▄▄▄██▀▄███▀ ▀▀████      ▄██
+▄▀▀▀▄██▄▀▀▌████▒▒▒▒▒▒███     ▌▄▄▀
+▌    ▐▀████▐███▒▒▒▒▒▐██▌
+▀▄▄▄▄▀   ▀▀████▒▒▒▒▄██▀
+          ▀▀█████████▀
+        ▄▄██▀██████▀█
+      ▄██▀     ▀▀▀  █
+     ▄█             ▐▌
+ ▄▄▄▄█▌              ▀█▄▄▄▄▀▀▄
+▌     ▐                ▀▀▄▄▄▀
+ ▀▀▄▄▀
+"}
+
 curlt() {
     curl_format='
  time_namelookup:    %{time_namelookup}
@@ -12,6 +35,14 @@ curl -w "$curl_format" -o /dev/null -s "$@"
 
 supernova() {
     pew in supernova supernova "$@"
+}
+
+anigrate() {
+    pew in anigrate-MTFg9EvQ anigrate "$@"
+}
+
+trendy() {
+    pew in trendy-gmsr9_zE ~/dev/trendy/trendy.py "$@"
 }
 
 ro() {

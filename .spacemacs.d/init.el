@@ -104,8 +104,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layer-path '("~/.spacemacs.d/")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
-   dotspacemacs-configuration-layers (
-                                      append dotspacemacs/layers/core
+   dotspacemacs-configuration-layers (append dotspacemacs/layers/core
                                              dotspacemacs/layers/extra
                                              dotspacemacs/layers/langs
                                              dotspacemacs/layers/tools
@@ -779,3 +778,24 @@ Put your configuration code here, except for variables that  should be set befor
 (setq custom-file "~/.spacemacs.d/custom.el")
 (load custom-file 'noerror)
 ;; (defun dotspacemacs/emacs-custom-settings ())
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(delete-selection-mode nil)
+ '(package-selected-packages
+   (quote
+    (vi-tilde-fringe neotree helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-flx helm-descbinds helm-ag evil-nerd-commenter ace-jump-helm-line zoom zenburn-theme zen-and-art-theme yasnippet-snippets yapfify xterm-color ws-butler writeroom-mode writegood-mode winum white-sand-theme which-key wgrep weechat web-mode web-beautify wc-mode volatile-highlights uuidgen use-package unfill underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme treemacs-projectile treemacs-evil toxi-theme toc-org tldr tiny terminal-here tao-theme tangotango-theme tango-plus-theme tango-2-theme tagedit systemd symon sx sunny-day-theme sublime-themes subatomic256-theme subatomic-theme string-inflection spaceline-all-the-icons spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme snazzy-theme smyx-theme smex smeargle slim-mode shell-pop seti-theme scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe reverse-theme restart-emacs request rebecca-theme rbenv ranger rake rainbow-mode rainbow-identifiers rainbow-delimiters railscasts-theme quickrun pyvenv pytest pyenv-mode py-isort purple-haze-theme pug-mode professional-theme powershell planet-theme pippel pipenv pip-requirements phoenix-dark-pink-theme phoenix-dark-mono-theme persp-mode pdf-tools password-generator paradox paper-theme pandoc-mode ox-reveal ox-pandoc overseer orgit organic-green-theme org-web-tools org-wc org-tree-slide org-projectile org-present org-pomodoro org-noter org-mime org-download org-cliplink org-bullets org-brain org-bookmark-heading open-junk-file omtose-phellack-theme olivetti oldlace-theme occidental-theme obsidian-theme ob-elixir nord-theme noctilux-theme naquadah-theme nanowrimo nameless mwim mustang-theme multi-term move-text monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minitest minimal-theme material-theme markdown-toc majapahit-theme magithub magit-svn magit-gitflow magit-gh-pulls madhat2r-theme macrostep lush-theme lorem-ipsum livid-mode live-py-mode lispy link-hint light-soap-theme kill-or-bury-alive key-chord kaolin-themes json-navigator js2-refactor js-doc jbeans-theme jazz-theme ivy-yasnippet ivy-xref ivy-rich ivy-purpose ivy-hydra ir-black-theme interleave insert-shebang inkpot-theme indent-tools indent-guide importmagic impatient-mode imenu-anywhere hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation heroku-theme hemisu-theme helpful helm-make hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate golden-ratio gnuplot gitignore-templates gitignore-mode github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ git-auto-commit-mode gist gh-md gandalf-theme fuzzy font-lock+ focus flycheck-pos-tip flycheck-mix flycheck-elm flycheck-credo flycheck-bashate flx-ido flatui-theme flatland-theme fish-mode fill-column-indicator farmhouse-theme fancy-narrow fancy-battery eziam-theme eyebrowse exotica-theme evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-snipe evil-smartparens evil-replace-with-register evil-org evil-numbers evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-embrace evil-commentary evil-cleverparens evil-args evil-anzu eval-sexp-fu espresso-theme eshell-z eshell-prompt-extras esh-help emmet-mode elm-mode elisp-slime-nav elfeed-web elfeed-org elfeed-goodies electric-spacing editorconfig dumb-jump drag-stuff draft-mode dracula-theme dotenv-mode doom-themes dockerfile-mode docker-compose-mode docker django-theme diredfl dired-subtree dired-quick-sort dired-narrow dired-filter dired-collapse diminish diff-hl define-word deadgrep darktooth-theme darkokai-theme darkmine-theme darkburn-theme dakrone-theme cython-mode cyberpunk-theme csv-mode counsel-projectile counsel-css company-web company-tern company-statistics company-shell company-quickhelp company-prescient company-anaconda command-log-mode column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized color-identifiers-mode clues-theme clean-aindent-mode chruby cherry-blossom-theme cheat-sh centered-cursor-mode busybee-theme bundler bubbleberry-theme browse-at-remote birds-of-paradise-plus-theme badwolf-theme auto-yasnippet auto-highlight-symbol auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes alchemist ahk-mode aggressive-indent afternoon-theme ace-link ac-ispell))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)

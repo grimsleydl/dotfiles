@@ -79,6 +79,7 @@ zplugin load "psprint/zsh-navigation-tools"
 export ENHANCD_COMMAND=ecd
 zplugin load "b4b4r07/enhancd"
 zplugin load "b4b4r07/ssh-keyreg"
+zplugin ice as"program" cp"httpstat.sh -> httpstat" pick"httpstat"; zplugin light "b4b4r07/httpstat"
 # zplugin load "b4b4r07/auto-fu.zsh"
 zplugin load "supercrabtree/k"
 # zplugin load "mollifier/anyframe"
