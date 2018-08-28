@@ -1,3 +1,6 @@
+auth() {
+    ~/bin/authnet.sh -d "$@" -l -u davi2570 -v
+}
 sanic() {
     echo "
                  ▄▄▄▄▄
