@@ -6,6 +6,9 @@ removelink() {
     [ -L "$1" ] && cp --remove-destination --reflink=auto "$(readlink "$1")" "$1"
 }
 
+auth() {
+    ~/bin/authnet.sh -d "$@" -l -u davi2570 -v
+}
 
 sanic() {
     echo "
