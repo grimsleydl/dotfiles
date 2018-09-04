@@ -1,3 +1,12 @@
+dock(){
+/usr/bin/sg docker newgrp $(id -gn)
+}
+
+removelink() {
+    [ -L "$1" ] && cp --remove-destination --reflink=auto "$(readlink "$1")" "$1"
+}
+
+
 sanic() {
     echo "
                  ▄▄▄▄▄
