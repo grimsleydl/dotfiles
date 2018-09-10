@@ -1,6 +1,6 @@
 unalias fd
 # alias anigrate="pipenv run anigrate"
-alias ccp="killall -9 rax-ccp ; ~/bin/Rax-CCP-0.2.1/rax-ccp & disown"
+alias ccp="killall -9 rax-ccp &>/dev/null ; ~/bin/Rax-CCP-0.2.1/rax-ccp &>/dev/null & disown"
 alias borg="sudo BORG_PASSCOMMAND='cat /root/.borg-passphrase' borg"
 alias htd='ht -o server,drac_ip,drac_user,drac_pass'
 alias htv='ht -o server,hypervisor,vsphere'

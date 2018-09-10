@@ -10,6 +10,7 @@ Xft.dpi: 96
 
 URxvt*saveLines: 5000
 
+URxvt.scrollBar: false
 ! do not scroll with output
 URxvt*scrollTtyOutput: false
 

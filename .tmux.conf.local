@@ -295,3 +295,6 @@ bind C-q send-prefix
 
 # increase repeat timeout
 set -sg repeat-time 300
+
+# New windows/pane in $PWD
+bind c new-window -c "#{pane_current_path}"
