@@ -1,16 +1,4 @@
-#blacklist top level folder
-/*
-#whitelist files & folders
 !.gitignore
-
-!.bashrc
-!.bash_profile
-!.bash_aliases
-!.profile
-!.npmrc
-!.ssh/
-.ssh/*
-!.ssh/config
 
 /node_modules
 /.vagrant
@@ -92,15 +80,6 @@ com_crashlytics_export_strings.xml
 .tags
 tags
 
-secrets/secret.zsh
 
 # personal list
-!.zshrc
-!grim-zsh/
-!.spacemacs.d/config/*
-!.spacemacs.d/layers/*
-!.tmux.conf
-!.tmux.conf.local
-!.bashrc##*
-!.config/wsltty/themes/*
-.bashrc
+secrets/secret.zsh
