@@ -1,9 +1,9 @@
 [submodule "Xresources/.Xresources.d/nord-xresources"]
 	path = Xresources/.Xresources.d/nord-xresources
 	url = git@github.com:arcticicestudio/nord-xresources.git
-[submodule "tmux/.tmux/plugins/tpm"]
-	path = tmux/.tmux/plugins/tpm
-	url = git@github.com:tmux-plugins/tpm.git
 [submodule "tmux/.tmux/oh-my-tmux"]
 	path = tmux/.tmux/oh-my-tmux
 	url = git@github.com:gpakosz/.tmux.git
+[submodule "tmux/.tmux/plugins/tpm"]
+	path = tmux/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
