@@ -141,7 +141,7 @@ zplugin ice pick"dotfiles/zsh/upr.zsh"; zplugin load "io-monad/dotfiles"
 zpl ice pick"manydots-magic" wait'0'; zpl load "knu/zsh-manydots-magic"
 
 # zplugin light "djui/alias-tips"
-zplugin light "MichaelAquilina/zsh-you-should-use"
+# zplugin light "MichaelAquilina/zsh-you-should-use"
 
 zplugin ice atinit'local zlocal; for zlocal in ~/grim-zsh/**/*.zsh; do source "$zlocal"; done'; zpl light ~/grim-zsh
 # zplugin snippet -f "$zlocal"
